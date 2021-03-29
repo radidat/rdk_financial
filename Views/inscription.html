@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="/Css/form.css">
+        <!-- CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+</head>
+<body>
+    
+        <div align="center" class="border">
+        
+            <h2>Inscription</h2>
+            <br />
+            <form method="POST" action="" >
+                <table>
+                    <tr>
+                        <td>
+                            <label  for="nom">Nom :</label>
+                       <div class="fm">
+                           <input type="text" placeholder="votre nom" id="name" name="name" /> 
+                       </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="prenom">Prenom :</label>
+                       <div class="fm">
+                           <input type="text" placeholder="votre nom" id="name" name="name" /> 
+                       </div>
+                        </td>
+                        <tr>
+                        <td>
+                            <label for="mail">Mail :</label>
+                       <div class="fm">
+                           <input type="email" placeholder="votre mail" id="mail" name="mail" /> 
+                       </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="mdp">Mot de passe :</label>
+                       <div class="fm">
+                       <input type="password" placeholder="entrez mot de passe" id="mdp" name="mdp"> 
+                       </div>
+                        </td>
+                    </tr>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" name="submit" class="submit" value="Valider">
+            </form>
+            <br>
+            <a href="connexion.php"><button class="Button">retour</button></a>
+            <br>
+            <?php
+            if(isset($erreur)){
+                echo '<font color="red">'.$erreur."</font>";
+            }
+            ?>
+           
+        </div>
+    
+</body>
+</html>

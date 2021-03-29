@@ -1,0 +1,604 @@
+*{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.opacity{ 
+position:fixed;
+background-color: rgba(0, 0, 0,  0.5);
+top:0; 
+left: 0;
+overflow-y: auto;
+z-index: 1;
+left:0;
+width: 100%;
+height: 100%;
+}
+.navbarHead{
+    color: black;
+    height: 100%;
+    width: 0px;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: -20px;
+    padding-left: 20px;
+    background-color:#fff;
+    overflow-x: hidden;
+    transition: all 0.5s;
+}
+
+
+.openSidebar{ 
+    width: 300px;
+}
+
+.menu-item h3{
+  
+    white-space: nowrap;
+    font-size: 20px
+}
+.sous-menu li{
+list-style: none;
+font-size: 15px;
+}
+.sous-menu li a{
+    white-space: nowrap;
+    text-decoration: none;
+    color:inherit;
+    display: block;
+    transition: 0.3s;
+    }
+.close{
+    cursor: pointer;
+}
+.btn-open, .close{ 
+    outline: none;
+    border: none;
+    width:0px;
+}
+.btn-open img{
+    margin:25px 50px;
+    background-color: none;
+    color:#53B4FF;
+    width:25px; 
+    height:25px;
+    cursor:pointer;
+    
+}
+
+.close i{
+  
+   /* background-color: aqua;*/
+    color: black;
+  margin-left: 250px;
+    width:25px; 
+    height:25px;
+}
+
+.logo-rdk{
+    width: 50px;
+    height:50px;
+    transform: translateY(45px);
+    margin-left: 120px;
+}
+
+.menu{
+    margin-top: 250px;
+    padding-left: 25px;
+}
+.test{
+background-color: red;
+}
+.search-car{
+    margin: 50px 0px 10px 10px;
+}
+.search-car input{
+    border-radius: 4px;
+    border: 1px solid #53B4FF;
+}
+.search-car input:focus{
+    box-shadow: none;
+}
+
+.btn-border{
+    border: 1px solid #53B4FF;
+    border-radius: 4px;
+    box-shadow: none !important;
+    cursor: pointer;
+}
+.btn-border i{ 
+    color:#53B4FF;
+}
+
+/*accordion-button */
+.accordion-item{
+    margin-bottom: 25px;
+    margin-left: 60px;
+    width: 250px;
+}
+
+
+.accordion-button:focus{
+box-shadow: none ;
+background-color:#53B4FF ;
+color: #fff;
+}
+.accordion-button{
+    
+    padding-left:65px;
+    background-color:rgba(74, 122, 255, 0.781) !important ;
+    text-transform: capitalize;
+    height:25px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.categorie-items{ 
+    list-style: none;
+    
+}
+.accordion-body{
+    margin: 0; 
+    padding: 0;
+  /* background-color: rgba(74, 122, 255, 0.781);*/
+}
+.categorie-items {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #A9CC34;
+ 
+}
+.categorie-items li{
+    margin: 0; 
+    padding: 0;
+    text-decoration: none ;
+    border: 1px solid rgba(74, 122, 255, 0.781);
+    transition: 0.2s;
+}
+.categorie-items li a{
+    margin-left: 70px;
+    text-decoration: none;
+    color: rgba(0, 0, 0,  0.9);
+    
+}
+.categorie-items li:hover{
+    transform: translateX(2px);
+    background-color:rgba(74, 122, 255, 0.781) ;
+    text-decoration: none ;
+   }
+.categorie-items li:hover a{ 
+    color: #fff;
+}
+   
+
+
+
+/*card-car*/
+
+.card-container{ 
+    margin-left: 25px;
+}
+.card{ 
+    margin-bottom: 35px;
+}
+.card-img-top{
+
+  width:100%;
+    height: 270px;
+}
+.card-title{ 
+    text-align: center;
+}
+.card-body .btn{
+
+    margin-left: 40px;
+}
+.pagination { 
+    margin-left: 40px;
+}
+.btn-color-infos{ 
+background-color: #53B4FF;
+color: #fff;
+}
+.categorie-container-lg{ 
+    display: none;
+}
+
+/*custom-radio */
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+  .checkmark.rented{
+    background-color: rgb(36, 226, 68);
+  }
+  .checkmark.available{
+    background-color: rgb(214, 55, 55);
+}
+.checkmark.maintenance{
+    background-color: rgb(221, 133, 18);  
+}
+  /* On mouse-over, add a grey background color */
+  
+  
+  /* When the checkbox is checked, add a blue background */
+ /* .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }*/
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 3px;
+    width: 8px;
+    height: 15px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+/*table*/
+.table-container{
+
+    width: 2px;
+}
+.table{ 
+border-radius: 50px;
+}
+.table-name{ 
+    white-space: nowrap;
+    color:#fff
+
+}
+.thead{ 
+    background-color: #A9CC34;
+}
+.table-body tr:nth-child(odd){ 
+    background-color:#fff;
+}
+.table-body tr:nth-child(even){ 
+    background-color: #a9a9a977;
+}
+ .table-pagi{
+    background-color: #A9CC34;
+    color: #fff;
+    box-shadow: none !important;
+}
+.chevron-table {
+    box-shadow: none  !important;
+    background-color: #A9CC34;
+
+}
+.chevron-table i{
+  
+    color: #fff;
+
+}
+
+@media only screen and (min-width: 768px){
+
+    .card{ 
+    margin-left: 50px;
+    }
+    .pagination{ 
+        margin-left: 30%;
+        margin-right: 50%;
+    }
+    .accordion-item{
+        margin-bottom: 25px;
+        margin-left: 180px;
+        width: 400px;
+    }
+    .accordion-button{
+        padding-left:150px;
+       
+    }
+    .categorie-items li a{
+        margin-left: 150px;
+       
+        
+    }
+    /*table*/
+ .table-container{ 
+    margin-top:25px;
+    margin-left: 25px;
+   width:700px;
+}
+.photos-vehicule img{
+    width: 400px;
+    height: 400px;
+}
+}
+
+@media only screen and (min-width: 1000px){
+
+.card-container{
+    margin-left:150px;
+    
+}
+.accordion-item{ 
+    margin-left: 30%;
+    margin-right: 50%;
+    margin-top: 25px;
+}
+.openSidebar{ 
+    width: 400px;
+}
+.pagination{ 
+    margin-left: 40%;
+    margin-right: 50%;
+}
+.close i{
+    
+   margin-left: 350px;
+ }
+ /*table*/
+ .table-container{ 
+    margin-top:25px;
+    margin-left: 50px;
+   width:950px;
+}
+}
+
+@media only screen and (min-width: 1200px){
+    .btn-open{ 
+        display: none;
+    }
+    .search-car{ 
+        width: 350px;
+       float: right;
+    }
+    .accordion-item{ 
+        display: none;
+    }
+    .navbarHead{ 
+        display: block;
+        width: 300px;
+    }
+
+    .categorie-container-lg{
+        display: block;
+        clear: both;
+       margin-left: 350px;
+       transform: translateY(60px);
+       border: 1px solid #53B4FF;
+       width: 295px;
+       border-radius: 4%;
+       height: 250px;
+
+    }
+    
+    .categorie-container-lg h1{ 
+        text-transform: capitalize;
+        font-size: 22px;
+        border: 1px solid rgba(110, 109, 109, 0.5);
+        text-align: center;
+        color: #53B4FF;
+        margin-bottom: 0;
+        height: 50px;
+    }
+    .categorie-items-lg{ 
+        margin: 0;
+        padding: 0;
+    }
+
+    .categorie-items-lg li{ 
+     list-style: none;
+     transition: 0.2s;
+     border: 1px solid #53B4FF;
+     height:40px;
+    }
+    .categorie-items-lg li:hover{ 
+      background-color: #53B4FF;
+       }
+    .categorie-items-lg a{ 
+        text-decoration: none;
+        margin-left:100px;
+        color: #53B4FF;
+       }
+       .categorie-items-lg li:hover a{ 
+      color: #fff; 
+       }
+    .card-container{ 
+        padding-top: 120px;
+      margin-left: 350px;
+    }
+    .pagination{ 
+        margin-left: 50%;
+    
+    }
+    .logo-rdk{
+        margin-left: 35px;
+        width: 150px;
+        height:150px;
+    }
+    /*table*/
+    .table-container{ 
+        margin-top:80px;
+        margin-left: 300px;
+       width:1200px;
+    }
+    .page-vehicule-infos{ 
+        margin-top: -150px;
+        margin-left: 225px;
+    }
+    .photos-vehicule img{ 
+     
+        height: 10px; 
+        width: 10px;
+    }
+
+    }
+/* véhicules-info*/
+.page-vehicule-infos{ 
+   
+    height:730px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-infos{
+    width:600px ;
+    height: 600px;
+   background-color: #fff;
+   margin-top: -150px;
+    border-radius: 25px;
+    box-shadow: 1px 1px 12px #555;
+}
+.infos{
+    padding:50px 25px 0px 25px;
+}
+.title{
+ text-transform: uppercase;
+ text-align: center;
+ margin: 20px;
+ font-size: 22px;
+}
+.state h4{ 
+    font-size: 18px;
+    margin-left:15px;
+}
+@media only screen and (min-width: 320px){
+
+    .container-infos{
+        height:900px;
+        margin-top: 150px;
+        width: 400px;
+    }
+    .state{ 
+        margin-left:10px;
+    }
+    .state .form-check{
+        margin-right: 8px;
+        margin-left:15px ;
+    }
+    .button-group{ 
+        
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+       flex-direction: row;
+       flex-wrap: nowrap;
+       margin-top: 20px;
+       margin-left: 10px;
+    }
+    .button-group button{
+        margin-right: 25px;
+        width:50%;
+        color:#fff;
+    }
+    .page-vehicule-infos{ 
+        margin-top: 25px;
+    }
+    .photos-vehicule{ 
+     
+        height:200px; 
+       display: block;
+    }
+    .photos-vehicule img{ 
+     
+        height:200px;
+        width: 250px; 
+      
+    }
+    
+}
+@media only screen and (min-width: 768px){
+
+
+    .button-group{ 
+        
+        width: 500px;
+       margin-top: 20px;
+       margin-left: 25px;
+    }
+    .button-group button{
+        margin-right: 20px;
+        width:50%;
+        color:#fff;
+    }
+    .container-infos{
+
+        width:750px ;
+        height:700px;
+    }
+    .infos{
+        width: 50%;
+    }
+    .photos-vehicule{ 
+     
+        height: 500px; 
+        width: 50%;
+    }
+    .photos-vehicule img{ 
+     
+        height: 300px; 
+        width: 300px;
+    }
+}
+@media only screen and (min-width: 992px){ 
+    .container-infos{
+        width:1200px ;
+        height:600px;
+        margin-left: 50px;
+        overflow:auto;
+    }
+   .infos{
+       width: 50%;
+   }
+
+    .photos-vehicule img{ 
+     
+        height: 400px; 
+        width: 400px;
+    }
+}
