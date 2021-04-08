@@ -5,33 +5,34 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link  href='/bootstrap-5/css/bootstrap.css' rel='stylesheet'>
-    <link href='/Css/generale.css' rel='stylesheet'>
-    <link href='/Css/etat-vehicule.css' rel='stylesheet'>
+    <link  href='../bootstrap-5/css/bootstrap.css' rel='stylesheet'>
+    <link href='../Css/generale.css' rel='stylesheet'>
+    <link href='../Css/etat_vehicule.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/1748750407.js" crossorigin="anonymous"></script>
-    <script src='/Views/js/sideBar.js' defer></script>
-    <script src='/bootstrap-5/js/bootstrap.js' defer></script>
+    <script src='./js/sideBar.js' defer></script>
+    <script src='../bootstrap-5/js/bootstrap.js' defer></script>
     <title>Etat vehicule</title>
 </head>
 
 <body>
+  <div id='bg-etat-vehicule-client'>
     <div id="background"></div>
     <header >
       
       <button class='btn-open'>
-        <img src='/images/icons8-menu.svg'>
+        <img src='../images/icons8-menu.svg'>
      </button>
        <nav class= 'navbarHead' id='sidebarjs'>
          <button type="button" class='close'><i class="fas fa-times"></i></button>
-         <img src='/images/rdk_financial.png' alt="logo" class='logo-rdk'>
+         <img src='../images/rdk_financial.png' alt="logo" class='logo-rdk'>
          <div class='menu'>
              <div class='menu-item'>
                  <h3>Réservation</h3>
                  <div>  
                      <ul class='sous-menu'>
                          <li><a href='#'>Planning de réservation</a></li>
-                         <li><a href="/views/location.html">Réaliser un contrat de location</a></li>
-                        <li> <a href="clients.html">Clients</a></li>
+                         <li><a href="/rdk_financial/views/location.php">Réaliser un contrat de location</a></li>
+                        <li> <a href="/rdk_financial/clients.php">Clients</a></li>
                      </ul>
                  </div>
              </div>
@@ -39,8 +40,8 @@
                <h3>Gestion des véhicules</h3>
                <div>
                    <ul class='sous-menu'>
-                    <li><a href='/views/ajout_vehicule.html'>Ajouter un véhicule</a></li>
-                    <li><a href='/views/acceuil.html'>Véhicules</a></li>
+                    <li><a href='rdk_financial/views/ajout_vehicule.php'>Ajouter un véhicule</a></li>
+                    <li><a href='rdk_financial/views/vehicules.php'>Véhicules</a></li>
                    </ul>
                </div>
            </div>
@@ -177,13 +178,13 @@
             <div class=' buttons-group-etat-vehicule  col-md-12 col-lg-6'>
                 <button type='button' class='btn'>Modifier</button>
                 <button type='submit' class='btn'>Enregistrer</button>
-                <a href='/Views/contravention.html' type='button' style='text-decoration: none; color:#fff;' class='btn'>Appliquer un pv</a>
+                <a href='rdk_financial/Views/contravention.html' type='button' style='text-decoration: none; color:#fff;' class='btn'>Appliquer un pv</a>
                   </div>
                 </div>
               </form>
       </div>
     
-
+    </div>
 </body>
 
 </html

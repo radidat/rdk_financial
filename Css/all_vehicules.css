@@ -1,6 +1,10 @@
+body{
+    background-color:rgb(66, 66, 66);
+}
+
 .search-car{
     margin: 50px 0px 50px 50px;
-    width: 300px;
+    width:1000px;
 }
 .search-car input{
     border-radius: 4px;
@@ -9,7 +13,7 @@
 .search-car input:focus{
     box-shadow: none;
 }
-
+    
 .btn-search{
     border: 1px solid #53B4FF;
     border-radius: 4px;

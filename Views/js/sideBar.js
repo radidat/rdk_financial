@@ -35,17 +35,18 @@ document.addEventListener('click', (e)=>{
 
 
 })
+/*
+ let bg = document.getElementById('color')
+bg.style.backgroundColor ='black'
 
  let currentPathName = window.location.pathname
- console.log(currentPathName)
    if(currentPathName){
     let tabPathName= currentPathName.split('/')
-
-    console.log(tabPathName)
     tabPathName.find( element =>{ 
 
-      if(element === 'acceuil.html'){ 
-        return   document.body.style.backgroundColor = 'rgb(66, 66, 66)';
+      console.log(element)
+      if(element === 'acceuil.php'){ 
+        return document.body.style.backgroundColor = 'rgb(66, 66, 66)';
       }else if(element ==='clients.html'){
          return document.body.style.backgroundColor = 'rgb(66, 66, 66)';
       }else if(element ==='information_Vehicule.html'){ 
@@ -72,4 +73,4 @@ document.addEventListener('click', (e)=>{
       
     })
    }
-     
+     */

@@ -5,45 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RDK financial</title>
-    <link  href='/bootstrap-5/css/bootstrap.css' rel='stylesheet'>
-    <link href='/Css/generale.css' rel='stylesheet'>
-    <link href='/Css/clients.css' rel='stylesheet'>
+    <link  href='../bootstrap-5/css/bootstrap.css' rel='stylesheet'>
+    <link href='../Css/generale.css' rel='stylesheet'>
+    <link href='../Css/all_clients.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/1748750407.js" crossorigin="anonymous"></script>
-    <script src='/Views/js/sideBar.js' defer></script>
-    <script src='/bootstrap-5/js/bootstrap.js' defer></script>
+    <script src='./js/sideBar.js' defer></script>
+    <script src='../bootstrap-5/js/bootstrap.js' defer></script>
 </head>
 <body>
+  <div id='bg-clients'>
   <div id="background"></div>
   <header >
-    
-    <button class='btn-open'>
-      <img src='/images/icons8-menu.svg'>
-   </button>
-     <nav class= 'navbarHead' id='sidebarjs'>
-       <button type="button" class='close'><i class="fas fa-times"></i></button>
-       <img src='/images/rdk_financial.png' alt="logo" class='logo-rdk'>
-       <div class='menu'>
-           <div class='menu-item'>
-               <h3>Réservation</h3>
-               <div>  
+      
+      <button class='btn-open'>
+        <img src='../images/icons8-menu.svg'>
+     </button>
+       <nav class= 'navbarHead' id='sidebarjs'>
+         <button type="button" class='close'><i class="fas fa-times"></i></button>
+         <img src='../images/rdk_financial.png' alt="logo" class='logo-rdk'>
+         <div class='menu'>
+             <div class='menu-item'>
+                 <h3>Réservation</h3>
+                 <div>  
+                     <ul class='sous-menu'>
+                         <li><a href='#'>Planning de réservation</a></li>
+                         <li><a href="/rdk_financial/views/location.php">Réaliser un contrat de location</a></li>
+                        <li> <a href="/rdk_financial/clients.php">Clients</a></li>
+                     </ul>
+                 </div>
+             </div>
+             <div class='menu-item'>
+               <h3>Gestion des véhicules</h3>
+               <div>
                    <ul class='sous-menu'>
-                       <li><a href='#'>Planning de réservation</a></li>
-                       <li><a href="/views/location.html">Réaliser un contrat de location</a></li>
-                      <li> <a href="clients.html">Clients</a></li>
+                    <li><a href='rdk_financial/views/ajout_vehicule.php'>Ajouter un véhicule</a></li>
+                    <li><a href='rdk_financial/views/vehicules.php'>Véhicules</a></li>
                    </ul>
                </div>
            </div>
-           <div class='menu-item'>
-             <h3>Gestion des véhicules</h3>
-             <div>
-                 <ul class='sous-menu'>
-                  <li><a href='/views/ajout_vehicule.html'>Ajouter un véhicule</a></li>
-                  <li><a href='/views/acceuil.html'>Véhicules</a></li>
-                 </ul>
-             </div>
-         </div>
-       </div> 
-     </nav>
+         </div> 
+       </nav>
+    </header>
 
      <div class='filter-clients row'>
        <h5 class='col-md-4'>Filtrer par : </h5>
@@ -84,7 +86,7 @@
                     <td>AA-000-AA</td>
                     <td>30/05/2021</td>
                     <td>26/04/2021</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
 
                   </tr>
                   <tr onclick="location.pathname ='/views/information_client.html'" >
@@ -97,7 +99,7 @@
                     <td>PL-132-AK</td>
                     <td>08/03/2021</td>
                     <td>26/04/2021</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                   </tr>
 
                   <tr onclick="location.pathname ='/views/information_client.html'" >
@@ -110,7 +112,7 @@
                     <td>AM-666-EE</td>
                     <td>26/09/2021</td>
                     <td>26/04/2021</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                   </tr>
 
                   <tr onclick="location.pathname ='/views/information_client.html'">
@@ -123,7 +125,7 @@
                     <td>AA-725-AD</td>
                     <td>08/03/2021</td>
                     <td>10/08/2021</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                   </tr>
 
                   <tr onclick="location.pathname ='/views/information_client.html'" >
@@ -136,7 +138,7 @@
                     <td>AB-344-CA</td>
                     <td>02/07/201</td>
                     <td>26/09/2021</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                   </tr>
                   <tr onclick="location.pathname ='/views/information_client.html'" >
                     <th scope="row">6</th>
@@ -148,7 +150,7 @@
                     <td>WW-942-JY</td>
                     <td>26/09/2021</td>
                     <td>26/09/2021</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                   </tr>
 
                   <tr onclick="location.pathname ='/views/information_client.html'">
@@ -161,7 +163,7 @@
                     <td>1-ALP-248</td>
                     <td>14/06/2021</td>
                     <td>08/08/2021</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                   </tr>
                   <tr onclick="location.pathname ='/views/information_client.html'" >
                     <th scope="row">8</th>
@@ -173,7 +175,7 @@
                     <td>CD-487-ND</td>
                     <td>02/07/201</td>
                     <td>08/08/2021</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                   </tr>
                   <tr onclick="location.pathname ='/views/information_client.html'">
                       <th scope="row">9</th>
@@ -185,7 +187,7 @@
                       <td>AA-572-BF</td>
                       <td>08/03/2021</td>
                       <td>10/08/2021</td>
-                      <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                      <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                     </a>
                
                   <tr onclick="location.pathname ='/views/information_client.html'" >
@@ -198,7 +200,7 @@
                     <td>AK-808-FK</td>
                     <td>26/09/2021</td>
                     <td>15/07/2021</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                   </tr>
                   <tr onclick="location.pathname ='/views/information_client.html'" >
                     <th scope="row">11</th>
@@ -210,7 +212,7 @@
                     <td>BG-553-ZS</td>
                     <td>26/09/2021</td>
                     <td>14/06/2021</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                   </tr>
                   <tr onclick="location.pathname ='/views/information_client.html'" >
                     <th scope="row">12</th>
@@ -222,7 +224,7 @@
                     <td>BG-553-ZS</td>
                     <td>26/09/2021</td>
                     <td>14/06/2021</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                   </tr>
                   <tr onclick="location.pathname ='/views/information_client.html'" >
                     <th scope="row">13</th>
@@ -234,7 +236,7 @@
                     <td>BG-553-ZS</td>
                     <td>@mdo</td>
                     <td>@mdo</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                   </tr>
                   <tr>
                     <th scope="row">14</th>
@@ -246,7 +248,7 @@
                     <td>BG-553-ZS</td>
                     <td>08/03/2021</td>
                     <td>14/06/2021</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                   </tr>
                   <tr onclick="location.pathname ='/views/information_client.html'">
                     <th scope="row">15</th>
@@ -258,7 +260,7 @@
                     <td>BG-553-ZS</td>
                     <td>08/03/2021</td>
                     <td>14/06/2021</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                   </tr>
                   <tr onclick="location.pathname ='/views/information_client.html'" >
                     <th scope="row">16</th>
@@ -270,7 +272,7 @@
                     <td>BG-553-ZS</td>
                     <td>08/03/2021</td>
                     <td>14/06/2021</td>
-                    <td><a style='text-decoration:none; color:black' href="/views/etat_vehicule_client.html">voir</a></td>
+                    <td><a style='text-decoration:none; color:black' href="/rdk_financial/views/etat_vehicule_client.html">voir</a></td>
                   </tr>
                   <tr>
                  
@@ -300,6 +302,8 @@
               </li>
             </ul>
           </nav>
+      </div>
+      </div>
       </div>
 </body>
 </html>

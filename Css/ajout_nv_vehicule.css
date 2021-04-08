@@ -1,3 +1,7 @@
+#bg-ajout-vehicule{
+    background-color: #A9CC34;
+}
+
 .ajout-vehicule{ 
 
     background-color: #fff;
@@ -38,11 +42,15 @@
     text-align: center;
     margin-left: 40%;
     }
+    #bg-ajout-vehicule{
+        height: 680px;
+    }
  }
+
  @media only screen and (min-width: 1200px){
     .ajout-vehicule{
         margin-left: 250px;
-        margin-top: 25px;
+        margin-top: 250px;
         width:850px;
         height: 400px;
     }
@@ -53,11 +61,14 @@
     }
  }
  @media only screen and (min-width: 1400px){
+    #bg-ajout-vehicule{
+        height: 720px;
+    }
     .ajout-vehicule{
         margin-left: 250px;
         margin-top:25px;
         width:1200px;
-        height:400px;
+     height:400px;
     }
     .btn-ajout{
         margin-top: 25px;
