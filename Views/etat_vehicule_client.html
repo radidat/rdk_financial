@@ -49,33 +49,31 @@
     </header>
     <h1 class='title-head'>Etat du véhicule</h1>
 
-    <div class='prev-page'>
-<a href='/views/location.html'><span class=' chevron chevron-left'><i class="fas fa-chevron-left"></i></span> Précédent</a>
-<h2 class='pdf-title'>Télécharger le Pdf</h2>
-    </div>
+    <h2 class='pdf-title'>Télécharger le Pdf</h2>
     <div class = 'container-data'>
         <form  class='row etat-vehicule'  >
             <div class=' row col-12 col-md-12 col-lg-12'>
                 <div class="mb-3 col-6 col-md-4 col-lg-4">
                     <label for="exampleFormControlInput1" class="form-label">Nom</label>
-                    <input type="email" class="form-control  " >
+                    <input type="email" class="form-control  " value='Jean' >
                   </div>
                   <div class="mb-3 col-6 col-6 col-md-4 col-lg-4">
-                    <label for="exampleFormControlInput1" class="form-label">Prénom</label>
-                    <input type="email" class="form-control  " >
+                    <label for="exampleFormControlInput1" class="form-label" >Prénom</label>
+                    <input type="email" class="form-control  " value='Robert'  >
                   </div>
                   <div class="mb-3 col-6  col-6 col-md-4 col-lg-4">
                     <label for="exampleFormControlInput1" class="form-label">Société</label>
-                    <input type="text" class="form-control  " >
+                    <input type="text" class="form-control  "  value='société 1'>
                   </div>
                   <div class="mb-3 col-6  col-6 col-md-4 col-lg-4">
                     <label for="exampleFormControlInput1" class="form-label">n°siret</label>
-                    <input type="text" class="form-control  " >
+                    <input type="text" class="form-control  " value='231 654 987 12315' >
                   </div>
                   <div class="mb-3 col-6  col-6 col-md-4 col-lg-4">
                     <label for="exampleFormControlInput1" class="form-label">Immarticulation</label>
-                    <input type="text" class="form-control  " >
+                    <input type="text" class="form-control  "  value='PL-132-AK'>
                   </div>
+
 
             </div>
             
@@ -88,26 +86,26 @@
                     </label>
                   </div>
                   <div class="form-check col-6">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" >
+                    <input class="form-check-input" type="radio" name="flexRadioDefault"  >
                     <label class="form-check-label" for="flexRadioDefault2">
                      electrique
                     </label>
                   </div>
                   <div class="form-check col-6">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault">
-                    <label class="form-check-label" for="flexRadioDefault3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" checked >
+                    <label class="form-check-label" for="flexRadioDefault2">
                      diesel
                     </label>
                   </div>
                   <div class="form-check col-6">
                     <input class="form-check-input" type="radio" name="flexRadioDefault"  >
-                    <label class="form-check-label" for="flexRadioDefault4">
+                    <label class="form-check-label" for="flexRadioDefault2">
                      hybride (diesel)
                     </label>
                   </div>
                   <div class="form-check col-8">
                     <input class="form-check-input" type="radio" name="flexRadioDefault"  >
-                    <label class="form-check-label" for="flexRadioDefault5">
+                    <label class="form-check-label" for="flexRadioDefault2">
                      hybride (essence)
                     </label>
                   </div>
@@ -118,11 +116,11 @@
 
                     <div class="mb-3 col-12 col-md-12 col-lg-12">
                         <label for="exampleFormControlInput1" class="form-label">Kilométrage</label>
-                        <input type="email" class="form-control  " >
+                        <input type="text" class="form-control   " value ='25 000'>
                       </div>
                       <div class="mb-3 col-12 col-md-12 col-lg-12">
                         <label for="exampleFormControlInput1" class="form-label">Niveau</label>
-                        <input type="email" class="form-control  " >
+                        <input type="text" class="form-control  " value='moyen'>
                       </div>
                       <div class="mb-3 col-12 col-md-12 col-lg-12">
                         <label for="exampleFormControlInput1" class="form-label">images du véhicule</label>
@@ -130,7 +128,10 @@
                       </div>
                       <div class=" col-12 col-md-12 col-lg-12">
                         <label for="exampleFormControlTextarea1" class="form-label">Observations</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                            Minus rerum tempore molestiae dolore sapiente blanditiis fugit sunt nulla quaerat hic,
+                             a aspernatur voluptatem dignissimos voluptates, suscipit esse porro voluptate maxime?
+                        </textarea>
                       </div>
                 </div>
             </div>
@@ -176,6 +177,7 @@
             <div class=' buttons-group-etat-vehicule  col-md-12 col-lg-6'>
                 <button type='button' class='btn'>Modifier</button>
                 <button type='submit' class='btn'>Enregistrer</button>
+                <a href='/Views/contravention.html' type='button' style='text-decoration: none; color:#fff;' class='btn'>Appliquer un pv</a>
                   </div>
                 </div>
               </form>

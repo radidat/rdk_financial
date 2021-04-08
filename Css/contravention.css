@@ -1,0 +1,68 @@
+.contravention{ 
+
+    background-color: #fff;
+    border-radius: 5px;
+    width: 380px;
+}
+
+.btn-contravention{
+    background-color:#A9CC34 ;
+    color: #fff;
+    margin-left: 5px;
+    width: 100%;
+}
+@media only screen and (min-width: 576px){
+   .ajout-vehicule{
+       width:500px;
+   }
+}
+@media only screen and (min-width: 768px){
+    .contravention{
+        width:700px;
+        height: 550px;
+    }
+    .btn-contravention{
+       width: 200px;
+    text-align: center;
+    margin-left: 40%;
+    }
+ }
+ @media only screen and (min-width: 992px){
+    .contravention{
+        margin-top: 25px;
+        width:900px;
+        height: 400px;
+    }
+    .btn-contravention{
+       width: 200px;
+    text-align: center;
+    margin-left: 40%;
+    }
+ }
+ @media only screen and (min-width: 1200px){
+    .contravention{
+        margin-left: 250px;
+        margin-top: 25px;
+        width:850px;
+        height: 400px;
+    }
+    .btn-contravention{
+       width: 200px;
+    text-align: center;
+    margin-left: 40%;
+    }
+ }
+ @media only screen and (min-width: 1400px){
+    .contravention{
+        margin-left: 250px;
+        margin-top:25px;
+        width:1200px;
+        height:400px;
+    }
+    .btn-contravention{
+       
+       width:300px;
+    text-align: center;
+    margin-left: 35%;
+    }
+ }

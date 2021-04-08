@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" href="/Css/formsadd.css">
     <link  href='/bootstrap-5/css/bootstrap.css' rel='stylesheet'>
-    <link href='/Css/style.css' rel='stylesheet'>
+    <link href='/Css/generale.css' rel='stylesheet'>
+    <link href='/Css/ajout-vehicule.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/1748750407.js" crossorigin="anonymous"></script>
     <script src='/Views/js/sideBar.js' defer></script>
     <script src='/bootstrap-5/js/bootstrap.js' defer></script>
@@ -33,7 +33,7 @@
                      <ul class='sous-menu'>
                          <li><a href='#'>Planning de réservation</a></li>
                          <li><a href="/views/location.html">Réaliser un contrat de location</a></li>
-                        <li> <a href="clients.html">client</a></li>
+                        <li> <a href="clients.html">Clients</a></li>
                      </ul>
                  </div>
              </div>
@@ -42,117 +42,71 @@
                <div>
                    <ul class='sous-menu'>
                     <li><a href='/views/ajout_vehicule.html'>Ajouter un véhicule</a></li>
-                    <li><a href='/views/acceuil.html'>véhicules</a></li>
+                    <li><a href='/views/acceuil.html'>Véhicules</a></li>
                    </ul>
                </div>
            </div>
          </div> 
        </nav>
-
-    <div align="center" class="border">
-        <br />
-        <h1>Ajout d'un vehicule</h1>
-        <form method="POST" action="">
-            <table>
-                <tr>
-                    <td>
-                        <label for="name">Marque :</label>
-                        <div class="fm">
-                            <input type="text" id="name" name="name"  />
-                        </div>
-                    </td>
-                    <td>
-                        <label for="name">Type :</label>
-                        <div class="fm">
-                            <input type="text" id="name" name="name"  />
-                        </div>
-                    </td>
-                    <td>
-                        <label for="name">Imatriculation :</label>
-                        <div class="fm">
-                            <input type="text" id="name" name="name"  />
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="name">Carburant :</label>
-                        <div class="fm">
-                            <select name="carburant" id="carburant">
-                                <option value="">Choisir un carburant</option>
-                                <option value="diesel">Diesel</option>
-                                <option value="sans-plomb 98">Sans-plomb 98</option>
-                                <option value="sans-plomb 95">Sans-plomb 95</option>
-                                <option value="electrique">Electrique</option>
-                                <option value="hybride">Hybride</option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <label for="name">Kilométrage :</label>
-                        <div class="fm">
-                            <input type="text" id="name" name="name" value="" />
-                        </div>
-                    </td>
-                    <td>
-                        <label for="name">Boite de vitesse :</label>
-                        <div class="fm">
-                        <select name="bdv" id="bdv">
-                                <option value="">--Boite de vitesse--</option>
-                                <option value="manuelle">Manuelle</option>
-                                <option value="automatique">Automatique</option>
-                        </select>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="name">Prix d'achat :</label>
-                        <div class="fm">
-                            <input type="text" id="name" name="name" value="" />
-                        </div>
-                    </td>
-                    <td>
-                        <label for="name">Date d'achat :</label>
-                        <div class="fm">
-                            <input type="date" id="name" name="name" value="" />
-                        </div>
-                    </td>
-                    <td>
-                        <label for="name">Prix de vente :</label>
-                        <div class="fm">
-                            <input type="text" id="name" name="name" value="" />
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="name">Date de vente :</label>
-                        <div class="fm">
-                            <input type="date" id="name" name="name" value="" />
-                        </div>
-                    </td>
-                    <td>
-                        <label for="name">Prix LLD :</label>
-                        <div class="fm">
-                            <input type="text" id="name" name="name" value="" />
-                        </div>
-                    </td>
-                    <td>
-                        <label for="name">Ajouter une image :</label>
-                        <div class="fm">
-                            <input type="text" id="name" name="name" value="" />
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <br><br>
-                <input type="submit" name="submit" class="submit" value="enregister">
-        </form>
-
-       
-
-    </div>
+    </header>
+       <h1 class='title-head'>Ajouter un nouveau véhicule</h1>
+      <div class = 'container-data'>
+        <form  class='row ajout-vehicule'  >
+          <div class="mb-3  col-md-6 col-lg-4">
+            <label for="exampleFormControlInput1" class="form-label">Marque</label>
+            <input type="email" class="form-control  "  placeholder="name@example.com">
+          </div>
+                
+          <div class="mb-3  col-md-6 col-lg-4">
+            <label for="exampleFormControlInput1" class="form-label">Type</label>
+            <input type="email" class="form-control"  placeholder="name@example.com">
+          </div>
+          <div class="mb-3 col-md-6 col-lg-4">
+            <label for="exampleFormControlInput1" class="form-label">Immarticulation</label>
+            <input type="email" class="form-control"  placeholder="name@example.com">
+          </div>
+          <div class=' mb-3 col-md-6 col-lg-4' style="margin-top: 35px;">
+            <select class="form-select w-auto col-md-5 form-select-sm" aria-label=".form-select-sm example">
+              <option selected>Choisir un carburant</option>
+              <option value="diesel">Diesel</option>
+              <option value="sans-plomb 98">Sans-plomb 98</option>
+              <option value="sans-plomb 95">Sans-plomb 95</option>
+              <option value="electrique">Electrique</option>
+              <option value="hybride">Hybride</option>>
+            </select>
+          </div>
+                
+                <div class="mb-3  col-md-6 col-lg-4">
+                  <label for="exampleFormControlInput1" class="form-label">Kilométrage</label>
+                  <input type="text" class="form-control"  placeholder="name@example.com">
+                </div>
+                <div class=' mb-3 col-md-6 col-lg-4' style="margin-top: 35px;">
+                  <select class="form-select w-auto col-md-5 form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>--Boite de vitesse--</option>
+                  <option value="manuelle">Manuelle</option>
+                  <option value="automatique">Automatique</option>
+                  </select>
+                </div>
+               
+               
+                <div class="mb-3  col-md-6 col-lg-4">
+                  <label for="exampleFormControlInput1" class="form-label">Prix d'achat</label>
+                  <input type="number" class="form-control"  placeholder="name@example.com">
+                </div>
+                <div class="mb-3  col-md-6 col-lg-4">
+                  <label for="exampleFormControlInput1" class="form-label">Date d'achat</label>
+                  <input type="date" class="form-control"  placeholder="name@example.com">
+                </div>
+                <div class="mb-3 col-md-6 col-lg-4">
+                  <label for="exampleFormControlInput1" class="form-label">Ajouter des photos</label>
+                  <input type="file" class="form-control"  multiple placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                  <button type='submit' class='btn  btn-ajout'>Enregistrer</button>
+                </div>
+              </form>
+      </div>
+    
 
 </body>
 

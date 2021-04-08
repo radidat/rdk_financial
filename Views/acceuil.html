@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RDK financial</title>
     <link  href='/bootstrap-5/css/bootstrap.css' rel='stylesheet'>
-    <link href='/Css/style.css' rel='stylesheet'>
+    <link href='/Css/generale.css' rel='stylesheet'>
+    <link href='/Css/vehicules.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/1748750407.js" crossorigin="anonymous"></script>
     <script src='/Views/js/sideBar.js' defer></script>
     <script src='/bootstrap-5/js/bootstrap.js' defer></script>
@@ -28,7 +29,7 @@
                      <ul class='sous-menu'>
                          <li><a href='#'>Planning de réservation</a></li>
                          <li><a href="/views/location.html">Réaliser un contrat de location</a></li>
-                        <li> <a href="clients.html">client</a></li>
+                        <li> <a href="clients.html">Clients</a></li>
                      </ul>
                  </div>
              </div>
@@ -37,7 +38,7 @@
                <div>
                    <ul class='sous-menu'>
                     <li><a href='/views/ajout_vehicule.html'>Ajouter un véhicule</a></li>
-                    <li><a href='/views/acceuil.html'>véhicules</a></li>
+                    <li><a href='/views/acceuil.html'>Véhicules</a></li>
                    </ul>
                </div>
            </div>
@@ -51,7 +52,7 @@
          <div class='search-car '>
           <form class="d-flex">
             <input class="form-control " type="search" placeholder="immarticulation" aria-label="Search">
-            <button class="btn btn-border" type="submit"><i class="fas fa-search"></i></button>
+            <button class="btn btn-search" type="submit"><i class="fas fa-search"></i></button>
           </form>
          </div>
 
@@ -85,48 +86,76 @@
           </ul>
     
         </div>
+       
          <div>
-        <div class='card-container row'>
 
-          <div class="card col-md-3 col-lg-6 "  style="width: 18rem;">
+          <div class='filter-car'>
+
+            <div class='filter-by-state'>
+             <h5>Filtrer : </h5>
+             <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+               <option value=''></option>
+               <option value="1">Loue</option>
+               <option value="2">Disponible</option>
+               <option value="3">Entretien</option>
+             </select>
+            </div>
+
+             <div class='sort'>
+               <h5>trier : </h5>
+               <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                <option value=''></option>
+                 <option value="1">A-Z</option>
+                 <option value="2">Z-A</option>
+               </select>
+  
+            </div>
+       
+  
+          </div>
+
+        <div class='card-container-car  '>
+
+          <div class="card  "  style="width: 18rem;">
             <img src="/images/vehicule_2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Audi A5</h5>
                 <h5>Etat du véhicule</h5>
                 <div class='row'>
-                  <label class="container col-6">Loué
-                    <input type="checkbox" checked="checked">
+                  <label class="container-checkbox col-6">Loué
+                    <input type="checkbox" checked>
                     <span class="checkmark rented"></span>
                   </label>
-                  <label class="container col-6">disponible
+                  <label class="container-checkbox  col-6">disponible
                     <input type="checkbox">
                     <span class="checkmark available"></span>
                   </label>
                   
-                  <label class="container col-12">Entretien
+                  <label class="container-checkbox  col-12">Entretien
                     <input type="checkbox">
                     <span class="checkmark maintenance"></span>
                   </label>
                 </div>
               <a href="/views/information_Vehicule.html" class="btn  btn-color-infos">Plus d'informations</a>
-            </div>
+            </div> 
           </div>
-          <div class="card col-md-3 col-lg-6"  style="width: 18rem;">
+
+          <div class="card"  style="width: 18rem;">
             <img src="/images/vehicule_3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Audi A5</h5>
                 <h5>Etat du véhicule</h5>
                 <div class='row'>
-                  <label class="container col-6">Loué
-                    <input type="checkbox" checked="checked">
+                  <label class="container-checkbox  col-6">Loué
+                    <input type="checkbox" checked>
                     <span class="checkmark rented"></span>
                   </label>
-                  <label class="container col-6">disponible
+                  <label class="container-checkbox  col-6">disponible
                     <input type="checkbox">
                     <span class="checkmark available"></span>
                   </label>
                   
-                  <label class="container col-12">Entretien
+                  <label class="container-checkbox  col-12">Entretien
                     <input type="checkbox">
                     <span class="checkmark maintenance"></span>
                   </label>
@@ -134,22 +163,23 @@
               <a href="/views/information_Vehicule.html"  class="btn btn-color-infos ">Plus d'informations</a>
             </div>
           </div>
-          <div class="card col-md-3 col-lg-6"  style="width: 18rem;">
+
+          <div class="card"  style="width: 18rem;">
             <img src="/images/vehicule_4.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Audi A5</h5>
                 <h5>Etat du véhicule</h5>
                 <div class='row'>
-                  <label class="container col-6">Loué
-                    <input type="checkbox" checked="checked">
+                  <label class="container-checkbox  col-6">Loué
+                    <input type="checkbox" >
                     <span class="checkmark rented"></span>
                   </label>
-                  <label class="container col-6">disponible
-                    <input type="checkbox">
+                  <label class="container-checkbox  col-6">disponible
+                    <input type="checkbox" checked>
                     <span class="checkmark available"></span>
                   </label>
                   
-                  <label class="container col-12">Entretien
+                  <label class="container-checkbox  col-12">Entretien
                     <input type="checkbox">
                     <span class="checkmark maintenance"></span>
                   </label>
@@ -157,22 +187,23 @@
               <a href="/views/information_Vehicule.html"  class="btn  btn-color-infos">Plus d'informations</a>
             </div>
           </div>
-          <div class="card col-md-3 col-lg-6"  style="width: 18rem;">
+
+          <div class="card"  style="width: 18rem;">
             <img src="/images/vehicule_5.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Audi A5</h5>
                 <h5>Etat du véhicule</h5>
                 <div class='row'>
-                  <label class="container col-6">Loué
+                  <label class="container-checkbox  col-6">Loué
                     <input type="checkbox" checked="checked">
                     <span class="checkmark rented"></span>
                   </label>
-                  <label class="container col-6">disponible
+                  <label class="container-checkbox  col-6">disponible
                     <input type="checkbox">
                     <span class="checkmark available"></span>
                   </label>
                   
-                  <label class="container col-12">Entretien
+                  <label class="container-checkbox  col-12">Entretien
                     <input type="checkbox">
                     <span class="checkmark maintenance"></span>
                   </label>
@@ -180,45 +211,47 @@
               <a href="/views/information_Vehicule.html" class="btn  btn-color-infos">Plus d'informations</a>
             </div>
           </div>
-          <div class="card col-md-3 col-lg-6"  style="width: 18rem;">
+
+          <div class="card "  style="width: 18rem;">
             <img src="/images/vehicule_2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Audi A5</h5>
                 <h5>Etat du véhicule</h5>
                 <div class='row'>
-                  <label class="container col-6">Loué
-                    <input type="checkbox" checked="checked">
+                  <label class="container-checkbox col-6">Loué
+                    <input type="checkbox">
                     <span class="checkmark rented"></span>
                   </label>
-                  <label class="container col-6">disponible
-                    <input type="checkbox">
+                  <label class="container-checkbox  col-6" >disponible
+                    <input type="checkbox"  >
                     <span class="checkmark available"></span>
                   </label>
                   
-                  <label class="container col-12">Entretien
-                    <input type="checkbox">
+                  <label class="container-checkbox  col-12">Entretien
+                    <input type="checkbox" checked>
                     <span class="checkmark maintenance"></span>
                   </label>
                 </div>
               <a href="/views/information_Vehicule.html"  class="btn  btn-color-infos">Plus d'informations</a>
             </div>
           </div>
-          <div class="card col-md-3 col-lg-6"  style="width: 18rem;">
+
+          <div class="card "  style="width: 18rem;">
             <img src="/images/vehicule_4.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Audi A5</h5>
                 <h5>Etat du véhicule</h5>
                 <div class='row'>
-                  <label class="container col-6">Loué
-                    <input type="checkbox" checked="checked">
+                  <label class="container-checkbox  col-6">Loué
+                    <input type="checkbox" checked>
                     <span class="checkmark rented"></span>
                   </label>
-                  <label class="container col-6">disponible
+                  <label class="container-checkbox  col-6">disponible
                     <input type="checkbox">
                     <span class="checkmark available"></span>
                   </label>
                   
-                  <label class="container col-12">Entretien
+                  <label class="container-checkbox col-12">Entretien
                     <input type="checkbox">
                     <span class="checkmark maintenance"></span>
                   </label>
@@ -226,22 +259,23 @@
               <a href="/views/information_Vehicule.html"  class="btn  btn-color-infos">Plus d'informations</a>
             </div>
           </div>
-          <div class="card col-md-3 col-lg-6"  style="width: 18rem;">
+
+          <div class="card"  style="width: 18rem;">
             <img src="/images/vehicule_5.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Audi A5</h5>
                 <h5>Etat du véhicule</h5>
                 <div class='row'>
-                  <label class="container col-6">Loué
+                  <label class="container-checkbox  col-6">Loué
                     <input type="checkbox" checked="checked">
                     <span class="checkmark rented"></span>
                   </label>
-                  <label class="container col-6">disponible
+                  <label class="container-checkbox  col-6">disponible
                     <input type="checkbox">
                     <span class="checkmark available"></span>
                   </label>
                   
-                  <label class="container col-12">Entretien
+                  <label class="container-checkbox  col-12">Entretien
                     <input type="checkbox">
                     <span class="checkmark maintenance"></span>
                   </label>
@@ -249,22 +283,23 @@
               <a href="/views/information_Vehicule.html"  class="btn  btn-color-infos ">Plus d'informations</a>
             </div>
           </div>
-          <div class="card col-md-3 col-lg-6"  style="width: 18rem;">
+
+          <div class="card "  style="width: 18rem;">
             <img src="/images/vehicule_6.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Audi A5</h5>
                 <h5>Etat du véhicule</h5>
                 <div class='row'>
-                  <label class="container col-6">Loué
+                  <label class="container-checkbox  col-6">Loué
                     <input type="checkbox" checked="checked">
                     <span class="checkmark rented"></span>
                   </label>
-                  <label class="container col-6">disponible
+                  <label class="container-checkbox  col-6">disponible
                     <input type="checkbox">
                     <span class="checkmark available"></span>
                   </label>
                   
-                  <label class="container col-12">Entretien
+                  <label class="container-checkbox  col-12">Entretien
                     <input type="checkbox">
                     <span class="checkmark maintenance"></span>
                   </label>
@@ -272,44 +307,47 @@
               <a href="/views/information_Vehicule.html"  class="btn btn-color-infos">Plus d'informations</a>
             </div>
           </div>
-          <div class="card col-md-3 col-lg-6"  style="width: 18rem;">
+
+          <div class="card"  style="width: 18rem;">
             <img src="/images/vehicule_7.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Audi A5</h5>
                 <h5>Etat du véhicule</h5>
                 <div class='row'>
-                  <label class="container col-6">Loué
-                    <input type="checkbox" checked="checked">
+                  <label class="container-checkbox  col-6">Loué
+                    <input type="checkbox" checked>
                     <span class="checkmark rented"></span>
                   </label>
-                  <label class="container col-6">disponible
+                  <label class="container-checkbox  col-6">disponible
                     <input type="checkbox">
                     <span class="checkmark available"></span>
                   </label>
                   
-                  <label class="container col-12">Entretien
-                    <input type="checkbox">
+                  <label class="container-checkbox  col-12">Entretien
+                    <input type="checkbox" >
                     <span class="checkmark maintenance"></span>
                   </label>
                 </div>
               <a href="/views/information_Vehicule.html"  class="btn  btn-color-infos">Plus d'informations</a>
             </div>
-          </div> <div class="card col-md-3 col-lg-6"  style="width: 18rem;">
+          </div> 
+          
+          <div class="card "  style="width: 18rem;">
             <img src="/images/vehicule_2.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Audi A5</h5>
                 <h5>Etat du véhicule</h5>
                 <div class='row'>
-                  <label class="container col-6">Loué
+                  <label class="container-checkbox  col-6">Loué
                     <input type="checkbox" checked="checked">
                     <span class="checkmark rented"></span>
                   </label>
-                  <label class="container col-6">disponible
-                    <input type="checkbox">
+                  <label class="container-checkbox  col-6">disponible
+                    <input type="checkbox ">
                     <span class="checkmark available"></span>
                   </label>
                   
-                  <label class="container col-12">Entretien
+                  <label class="container-checkbox  col-12">Entretien
                     <input type="checkbox">
                     <span class="checkmark maintenance"></span>
                   </label>
@@ -317,45 +355,48 @@
               <a href="/views/information_Vehicule.html"  class="btn  btn-color-infos">Plus d'informations</a>
             </div>
           </div>
-          <div class="card col-md-3 col-lg-6"  style="width: 18rem;">
+
+          <div class="card "  style="width: 18rem;">
             <img src="/images/vehicule_3.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Audi A5</h5>
                 <h5>Etat du véhicule</h5>
                 <div class='row'>
-                  <label class="container col-6">Loué
-                    <input type="checkbox" checked="checked">
+                  <label class="container-checkbox  col-6">Loué
+                    <input type="checkbox"  checked>
                     <span class="checkmark rented"></span>
                   </label>
-                  <label class="container col-6">disponible
+                  <label class="container-checkbox  col-6">disponible
                     <input type="checkbox">
                     <span class="checkmark available"></span>
                   </label>
                   
-                  <label class="container col-12">Entretien
+                  <label class="container-checkbox  col-12">Entretien
                     <input type="checkbox">
                     <span class="checkmark maintenance"></span>
                   </label>
                 </div>
               <a href="/views/information_Vehicule.html"  class="btn  btn-color-infos">Plus d'informations</a>
             </div>
-          </div> <div class="card col-md-3 col-lg-6"  style="width: 18rem;">
+          </div>
+          
+          <div class="card"  style="width: 18rem;">
             <img src="/images/vehicule_5.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Audi A5</h5>
                 <h5>Etat du véhicule</h5>
                  <div class='row'>
-                  <label class="container col-6">Loué
-                    <input type="checkbox" checked="checked">
+                  <label class="container-checkbox  col-6">Loué
+                    <input type="checkbox">
                     <span class="checkmark rented"></span>
                   </label>
-                  <label class="container col-6">disponible
+                  <label class="container-checkbox  col-6">disponible
                     <input type="checkbox">
                     <span class="checkmark available"></span>
                   </label>
                   
-                  <label class="container col-12">Entretien
-                    <input type="checkbox">
+                  <label class="container-checkbox  col-12">Entretien
+                    <input type="checkbox" checked>
                     <span class="checkmark maintenance"></span>
                   </label>
                 </div>
@@ -369,7 +410,7 @@
 
 
           <nav aria-label="Page navigation mt-5">
-            <ul class="pagination">
+            <ul class="pagination pagination-vehicule">
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Previous">
                   <span aria-hidden="true">&laquo;</span>
@@ -378,9 +419,9 @@
               <li class="page-item"><a class="page-link" href="#">1</a></li>
               <li class="page-item"><a class="page-link" href="#">2</a></li>
               <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">5</a></li>
+              <li class="page-item"><a class="page-link" href="#">6</a></li>
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Next">
                   <span aria-hidden="true">&raquo;</span>

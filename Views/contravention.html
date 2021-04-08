@@ -2,21 +2,23 @@
 <html lang="fr">
 
 <head>
-    <link rel="stylesheet" href="/Css/formsadd.css">
-    <!-- CSS -->
-    
+   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link  href='/bootstrap-5/css/bootstrap.css' rel='stylesheet'>
-    <link href='/Css/style.css' rel='stylesheet'>
+    <link href='/Css/generale.css' rel='stylesheet'>
+    <link href='/Css/contravention.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/1748750407.js" crossorigin="anonymous"></script>
     <script src='/Views/js/sideBar.js' defer></script>
     <script src='/bootstrap-5/js/bootstrap.js' defer></script>
-    <title>Contravention</title>
+
+    <title>Ajout</title>
 </head>
 
 <body>
     <div id="background"></div>
+   
     <header >
       
       <button class='btn-open'>
@@ -32,7 +34,7 @@
                      <ul class='sous-menu'>
                          <li><a href='#'>Planning de réservation</a></li>
                          <li><a href="/views/location.html">Réaliser un contrat de location</a></li>
-                        <li> <a href="clients.html">client</a></li>
+                        <li> <a href="clients.html">Clients</a></li>
                      </ul>
                  </div>
              </div>
@@ -41,111 +43,65 @@
                <div>
                    <ul class='sous-menu'>
                     <li><a href='/views/ajout_vehicule.html'>Ajouter un véhicule</a></li>
-                    <li><a href='/views/acceuil.html'>véhicules</a></li>
+                    <li><a href='/views/acceuil.html'>Véhicules</a></li>
                    </ul>
                </div>
            </div>
          </div> 
        </nav>
-    <div align="center" class="border">
-        <br />
-        <h1>Contravention</h1>
-        <form method="POST" action="">
-            <table>
-                <tr>
-                    <td>
-                        <label for="name">Nom :</label>
-                        <div class="fm">
-                            <input type="text" id="nom" name="nom" value="" />
-                        </div>
-                    </td>
-                    <td>
-                        <label for="name">Prenom :</label>
-                        <div class="fm">
-                            <input type="text" id="prenom" name="prenom" value="" />
-                        </div>
-                    </td>
-                    <td>
-                        <label for="name">Email :</label>
-                        <div class="fm">
-                            <input type="email" id="name" name="name" value="" />
-                        </div>
-                    </td>
-                    <td>
-                        <label for="name">Télephone :</label>
-                        <div class="fm">
-                            <input type="text" id="telephone" name="telephone" value="" />
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                <td>
-                        <label for="name">Adresse :</label>
-                        <div class="fm">
-                            <input type="text" id="adresse" name="adresse" value="" />
-                        </div>
-                    </td>
-                    <td>
-                        <label for="name">Société :</label>
-                        <div class="fm">
-                            <input type="text" id="societe" name="societe" value="" />
-                        </div>
-                    </td>
-                    <td>
-                        <label for="name">N°siret :</label>
-                        <div class="fm">
-                            <input type="text" id="name" name="name" value="" />
-                        </div>
-                    </td>
-                    <td>
-                        <label for="name">Vehicule loué :</label>
-                        <div class="fm">
-                            <input type="text" id="siret" name="siret" value="" />
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                <td>
-                        <label for="name">Imatriculation :</label>
-                        <div class="fm">
-                            <input type="text" id="imatriculation" name="imatriculation" value="" />
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    
-                    <td>
-                        
-                        <label for="name">Signature :</label>
-                        
-                    </td>
-                    <td>
-                        <br><br>
-                        <label for="name">Date de départ :</label>
-                        <div class="fm">
-                            <input type="date" id="name" name="name" value="" />
-                        </div>
-                    </td>
-                    <td>
-                        <br><br>
-                        <label for="name">Montant :</label>
-                        <div class="fm">
-                            <input type="text" id="name" name="name" value="" />
-                        </div>
-                    </td>
-                </tr>
+       <h1 class='title-head'>Contravention</h1>
+       <h2 class='pdf-title '>Télécharger le Pdf</h2>
+      <div class = 'container-data'>
+        <form  class='row contravention'  >
+          <div class="mb-3  col-md-6 col-lg-4">
+            <label for="exampleFormControlInput1" class="form-label">Nom : </label>
+            <input type="text" class="form-control  " >
+          </div>
                 
+          <div class="mb-3  col-md-6 col-lg-4">
+            <label for="exampleFormControlInput1" class="form-label">Prenom</label>
+            <input type="text" class="form-control"  >
+          </div>
+          <div class="mb-3 col-md-6 col-lg-4">
+            <label for="exampleFormControlInput1" class="form-label">Telephone</label>
+            <input type="text" class="form-control" >
+          </div>
+          <div class="mb-3 col-md-6 col-lg-4">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" class="form-control" >
+          </div>
+          
                 
-            </table>
-            <br><br>
-            
-                <input type="submit" name="submit" class="submit" value="enregister">
-                
-                        
-        </form>
-
-    </div>
+          <div class="mb-3  col-md-6 col-lg-4">
+            <label for="exampleFormControlInput1" class="form-label">Adresse</label>
+            <input type="text" class="form-control"  >
+          </div>
+          <div class="mb-3  col-md-6 col-lg-4">
+            <label for="exampleFormControlInput1" class="form-label">Société</label>
+            <input type="text" class="form-control"  >
+          </div>
+               
+                <div class="mb-3  col-md-6 col-lg-4">
+                  <label for="exampleFormControlInput1" class="form-label">N°siret</label>
+                  <input type="number" class="form-control"  placeholder="name@example.com">
+                </div>
+                <div class="mb-3  col-md-6 col-lg-4">
+                  <label for="exampleFormControlInput1" class="form-label">véhicule loué</label>
+                  <input type="text" class="form-control"  placeholder="name@example.com">
+                </div>
+                <div class="mb-3 col-md-6 col-lg-4">
+                  <label for="exampleFormControlInput1" class="form-label">Immarticulation</label>
+                  <input type="text" class="form-control"  multiple placeholder="name@example.com">
+                </div>
+                <div class="mb-3 col-md-6 col-lg-4">
+                    <label for="exampleFormControlInput1" class="form-label">Montant</label>
+                    <input type="number" class="form-control"  >
+                  </div>
+                <div class="mb-3">
+                  <button type='submit' class='btn  btn-contravention'>Enregistrer</button>
+                </div>
+              </form>
+      </div>
+    
 
 </body>
-
-</html>

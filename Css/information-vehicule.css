@@ -1,0 +1,155 @@
+/* véhicules-info*/
+.page-vehicule-infos{ 
+   
+    height:730px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-infos{
+    width:600px ;
+    height: 600px;
+   background-color: #fff;
+   margin-top: -150px;
+    border-radius: 25px;
+    box-shadow: 1px 1px 12px #555;
+}
+.infos{
+    padding:50px 25px 0px 25px;
+}
+.title{
+ text-transform: uppercase;
+ text-align: center;
+ margin: 20px;
+ font-size: 22px;
+}
+.state h4{ 
+    font-size: 18px;
+    margin-left:15px;
+}
+@media only screen and (min-width: 320px){
+
+    .container-infos{
+        height:900px;
+        margin-top: 150px;
+        width: 400px;
+    }
+    .state{ 
+        margin-left:10px;
+    }
+    .state .form-check{
+        margin-right: 8px;
+        margin-left:15px ;
+    }
+    .button-group{ 
+        
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+       flex-direction: row;
+       flex-wrap: nowrap;
+       margin-top: 20px;
+       margin-left: 10px;
+    }
+    .button-group button{
+        margin-right: 25px;
+        width:50%;
+        color:#fff;
+    }
+    .page-vehicule-infos{ 
+        margin-top: 25px;
+    }
+    .photos-vehicule{ 
+     
+        height:200px; 
+       display: block;
+    }
+    .photos-vehicule img{ 
+     
+        height:200px;
+        width: 250px; 
+      
+    }
+}
+@media only screen and (min-width: 576px){ 
+
+    .container-infos{ 
+        width: 550px;
+    }
+
+}
+
+@media only screen and (min-width: 768px){
+
+
+    .button-group{ 
+        
+        width: 500px;
+       margin-top: 20px;
+       margin-left: 25px;
+    }
+    .button-group button{
+        margin-right: 20px;
+        width:50%;
+        color:#fff;
+    }
+    .container-infos{
+
+        width:750px ;
+        height:700px;
+    }
+    .infos{
+        width: 50%;
+    }
+    .photos-vehicule{ 
+     margin-left: -25px;
+        height:600px; 
+        width: 50%;
+    }
+ 
+}
+
+@media only screen and (min-width: 992px){ 
+    .container-infos{
+        width:950px ;
+        height:600px;
+        margin-top: -100px;
+        margin-left: 5px;
+        overflow:auto;
+    }
+   .infos{
+       width: 50%;
+   }
+
+    .photos-vehicule img{ 
+     
+        height: 400px; 
+        width: 400px;
+    }
+}
+
+
+@media only screen and (min-width: 1200px){
+   
+
+    .container-infos{ 
+        width:1100px;
+        margin-top:-150px;
+        margin-left:255px;
+    }
+    .photos-vehicule img{ 
+     
+        height: 500px; 
+        width: 500px;
+    }
+
+    }
+    @media only screen and (min-width: 1400px){
+   
+
+        .container-infos{ 
+            width:1200px;
+        }
+      
+    
+        }

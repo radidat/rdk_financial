@@ -1,0 +1,101 @@
+/*table*/
+.table-container{
+
+    width: 2px;
+}
+.table{ 
+border-radius: 50px;
+}
+.table-name{ 
+    white-space: nowrap;
+    color:#fff
+
+}
+td{
+white-space: nowrap;
+}
+.thead{ 
+    background-color: #A9CC34;
+}
+.table-body tr:nth-child(odd){ 
+    background-color:#fff;
+}
+.table-body tr:nth-child(even){ 
+    background-color: #a9a9a977;
+}
+ .table-pagi{
+    background-color: #A9CC34;
+    color: #fff;
+    box-shadow: none !important;
+}
+.chevron-table {
+    box-shadow: none  !important;
+    background-color: #A9CC34;
+
+}
+.chevron-table i{
+  
+    color: #fff;
+
+}
+.filter-clients{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.filter-clients h5{ 
+    white-space: nowrap;
+    padding-top: 30px;
+    padding-left: 25px;
+ color:#fff;
+ margin-bottom: 0;
+}
+.filter-clients-input{
+    box-shadow: none  !important;
+}
+.filter-clients-input:focus{
+   border: 1px solid #A9CC34;
+}
+@media only screen and (min-width: 768px){
+
+ .table-container{ 
+    margin-top:25px;
+   width:700px;
+}
+.filter-clients {
+    margin-left: -65px;
+}
+
+.filter-clients h5{
+    padding-left: 90px;
+}
+
+
+}
+@media only screen and (min-width: 1000px){
+
+     .table-container{ 
+        margin-top:25px;
+       width:950px;
+    }
+    }
+
+    @media only screen and (min-width: 1200px){
+        .table-container{ 
+            margin-top:10px;
+            margin-left: 300px;
+           width:1200px;
+        }
+
+    .pagination-clients{
+        margin-left:20%;
+    }
+    .filter-clients{
+        padding-top:30px;
+        margin-left: 250px;
+        width: 60%;
+    }
+    .filter-clients h5{
+        padding-left: 150px;
+       
+    }
+        }

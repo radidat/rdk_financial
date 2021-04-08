@@ -1,0 +1,132 @@
+ /* infos client*/
+ .container-data .infos-client{ 
+    height: 800px;
+    overflow:auto;
+    width: 380px;
+    background-color: #fff;
+}
+.table_client_infos{
+
+   width: 400px;
+}
+
+
+/*table*/
+.table-container{
+
+   width: 2px;
+}
+.table{ 
+border-radius: 50px;
+}
+.table-name{ 
+   white-space: nowrap;
+   color:#fff
+
+}
+.thead{ 
+   background-color: #A9CC34;
+}
+.table-body tr:nth-child(odd){ 
+   background-color:#fff;
+}
+.table-body tr:nth-child(even){ 
+   background-color: #a9a9a977;
+}
+.table-pagi{
+   background-color: #A9CC34;
+   color: #fff;
+   box-shadow: none !important;
+}
+.chevron-table {
+   box-shadow: none  !important;
+   background-color: #A9CC34;
+
+}
+.chevron-table i{
+ 
+   color: #fff;
+
+}
+
+.title-infos-client-table{
+   text-align: center;
+}
+.table-infos-client{
+   width: 100%
+}
+.btn-infos-client-modif{
+   color: #fff;
+   width: 200px;
+   background-color: #A9CC34;
+}
+@media only screen and (min-width: 576px){
+
+ .container-data  .infos-client{
+      width: 550px;
+      height: 850px;
+   }
+   .table-container{ 
+      margin-top:25px;
+      margin-left: 25px;
+     width:700px;
+   }
+}  
+@media only screen and (min-width: 768px){
+
+   .container-data  .infos-client{
+        width: 750px;
+        height: 850px;
+     }
+     .table-container{ 
+        margin-top:25px;
+        margin-left: 25px;
+       width:700px;
+     }
+  }  
+
+@media only screen and (min-width: 992px){
+
+.table-container{ 
+   margin-top:25px;
+   margin-left: 25px;
+  width:700px;
+}
+
+}
+@media only screen and (min-width: 1000px){
+
+    .table-container{ 
+       margin-top:25px;
+       margin-left: 50px;
+      width:950px;
+   }
+   }
+
+   @media only screen and (min-width: 1200px){
+      .container-data .infos-client{
+         margin-top: 10px; 
+         margin-left: 250px;
+         width: 850px;
+      }
+       .table-container{ 
+           margin-top:80px;
+           margin-left: 300px;
+          width:1200px;
+       }
+
+   
+       }
+       @media only screen and (min-width: 1400px){
+         .container-data .infos-client{ 
+            width:1150px;
+            height: 750px;
+         }
+          .table-container{ 
+              margin-top:80px;
+              margin-left: 300px;
+             width:1200px;
+          }
+   
+      
+          }

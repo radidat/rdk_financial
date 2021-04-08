@@ -3,14 +3,17 @@ btnOpen = document.querySelector('.btn-open')
 bkgd= document.querySelector('#background')
 btnClose = document.querySelector('.close')
 
-btnOpen.addEventListener('click', (e)=>{
+if(btnOpen){ 
+  btnOpen.addEventListener('click', (e)=>{
     e.stopPropagation()
     sidebar.classList.add('openSidebar');
     bkgd.classList.add('opacity');
     
 })
+}
 
-btnClose.addEventListener('click', (e)=>{
+if(btnClose){
+  btnClose.addEventListener('click', (e)=>{
     e.stopPropagation()
 
     sidebar.classList.remove('openSidebar');
@@ -19,6 +22,8 @@ btnClose.addEventListener('click', (e)=>{
 
     
 })
+}
+
 
 document.addEventListener('click', (e)=>{
           e.stopPropagation()
@@ -55,7 +60,16 @@ document.addEventListener('click', (e)=>{
         return document.body.style.backgroundColor = '#A9CC34';
       }else if(element ==='location.html'){
         return document.body.style.backgroundColor = '#53B4FF';
+      }else if(element ==='information_client.html'){
+        return document.body.style.backgroundColor = '#A9CC34';
+      }else if(element ==='connexion.html'){
+        return document.body.style.backgroundColor = '#fff';
+      }else if(element ==='inscription.html'){
+        return document.body.style.backgroundColor = '#A9CC34';
+      }else if(element ==='etat_vehicule_client.html'){
+        return document.body.style.backgroundColor = '#A9CC34';
       }
+      
     })
    }
      
