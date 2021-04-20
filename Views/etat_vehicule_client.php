@@ -163,7 +163,7 @@
             <div class=' buttons-group-etat-vehicule  col-md-12 col-lg-6'>
                 <button type='button' class='btn'>Modifier</button>
                 <button type='submit' class='btn'>Enregistrer</button>
-                <a href='rdk_financial/Views/contravention.html' type='button' style='text-decoration: none; color:#fff;' class='btn'>Appliquer un pv</a>
+                <a href='main.php?page=contravention.php' type='button' style='text-decoration: none; color:#fff;' class='btn'>Appliquer un pv</a>
                   </div>
                 </div>
               </form>

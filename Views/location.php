@@ -20,7 +20,7 @@
                          <li><a href="?page=location">Réaliser un contrat de location</a></li>
                         <li> <a href="?page=clients">Clients</a></li>
                      </ul>
-                 </div>
+                 </div>    
              </div>
              <div class='menu-item'>
                <h3>Gestion des véhicules</h3>

@@ -10,7 +10,7 @@ $clients = new  Clients();
 $authentication = new AuthentificationControllers();
 $linkCSS = '';
 
-/* display page */
+/* display page route */
 ob_start();
 $page = $_GET['page'];
 if($page){
@@ -58,17 +58,14 @@ if($page==='clients'){
     $linkCSS ='ajout_client';
     $clients->new_client($_POST);
 
-}elseif($page ==='inscription'){
+}
+if($page ==='inscription'){
     $authentication->inscription($_POST);
-    $linkCSS ='inscriptionETconnexion';
+    $linkCSS ='inscription_connexion';
 }elseif($page ==='connexion'){
     $authentication->connexion($_POST);
-    $linkCSS ='inscriptionETconnexion';
-}else { 
-
-    echo 'cette page n\existe pas';
+    $linkCSS ='inscription_connexion';
 }
-
 
 
 }

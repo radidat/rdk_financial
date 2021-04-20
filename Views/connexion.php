@@ -6,7 +6,7 @@ ob_start();
     <div class = 'container-data'>
 
         <form  class='row connexion' method='POST'>
-          <img src='../images/rdk_financial.png' class='logo_rdk_connexion'>
+          <img src='./images/rdk_financial.png' class='logo_rdk_connexion'>
         <div class='col-md-12 row'>
                    <?=(isset($_POST['submit_connexion']) ? $erreur: '')?>
               <div class="mb-3 col-12">

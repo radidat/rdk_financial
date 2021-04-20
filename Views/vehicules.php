@@ -109,7 +109,7 @@
           <div class="card  "  style="width: 18rem;">
             <img src="./images/<?= $vehicle['image_1']?>" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Audi A5</h5>
+              <h5 class="card-title"><?=$vehicle['marque']?></h5>
                 <h5>Etat du véhicule</h5>
                 <div class='row'>
                   <label class="container-checkbox col-6">Loué

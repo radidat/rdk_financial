@@ -15,7 +15,7 @@ class VehiclesModel extends DataBase{
     public function fetch_all_vehicles(){ 
         $db= $this->dbConnect();
         $data_vehicles =[];
-      $fetch_vehicles = $db-> prepare("SELECT vehicules.id, images_vehicules.image_1 FROM vehicules
+      $fetch_vehicles = $db-> prepare("SELECT vehicules.id, images_vehicules.image_1, vehicules.marque FROM vehicules
          INNER JOIN images_vehicules ON vehicules.id = images_vehicules.id_vehicules ");
           $fetch_vehicles->execute(); 
           while($row = $fetch_vehicles->fetch()){ 

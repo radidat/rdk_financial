@@ -76,26 +76,3 @@ if(isset($post['inscription_submit'])){
 }
 
 
-/*
-if(isset($_POST['submit_connexion'])){
-    $mailconnect= htmlspecialchars($_POST['mailconnect']);
-    $mdpconnect= sha1($_POST['mdpconnect']);
-    if(!empty($mailconnect) && !empty($mdpconnect)){
-        $userexist = $requser->rowCount();
-        if($userexist == 1){
-            $userinfo = $requser-> fetch();
-            $_SESSION['id'] = $userinfo['id'];
-            $_SESSION['mail'] =$userinfo['mail'];
-            $_SESSION['mpd'] = $userinfo['mdp'];
-            header("Location: acceuil.php");
-
-        }
-        else{
-            $erreur="Mot de paase ou Mail incorrect";
-        }
-
-    }
-    else{
-        $erreur='tous les champs doivent être complétés';
-    }
-}*/
