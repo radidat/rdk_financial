@@ -1,38 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rdk_financial</title>
-  <link href='../bootstrap-5/css/bootstrap.css' rel='stylesheet'>
-  <link href='../Css/generale.css' rel='stylesheet'>
-  <link href='../Css/information_vehicule.css' rel='stylesheet'>
-  <script src="https://kit.fontawesome.com/1748750407.js" crossorigin="anonymous"></script>
-  <script src='./js/sideBar.js' defer></script>
-  <script src='../bootstrap-5/js/bootstrap.js' defer></script>
-</head>
-
-<body>
   <div id='bg-information-vehicule'>
     <div id="background"></div>
     <header >
       
       <button class='btn-open'>
-        <img src='../images/icons8-menu.svg'>
+        <img src='./images/icons8-menu.svg'>
      </button>
        <nav class= 'navbarHead' id='sidebarjs'>
          <button type="button" class='close'><i class="fas fa-times"></i></button>
-         <img src='../images/rdk_financial.png' alt="logo" class='logo-rdk'>
+         <img src='./images/rdk_financial.png' alt="logo" class='logo-rdk'>
          <div class='menu'>
              <div class='menu-item'>
                  <h3>Réservation</h3>
                  <div>  
                      <ul class='sous-menu'>
                          <li><a href='#'>Planning de réservation</a></li>
-                         <li><a href="rdk_financial/views/location.php">Réaliser un contrat de location</a></li>
-                        <li> <a href="rdk_financial/views/clients.php">Clients</a></li>
+                         <li><a href="?page=location">Réaliser un contrat de location</a></li>
+                        <li> <a href="?page=clients">Clients</a></li>
                      </ul>
                  </div>
              </div>
@@ -40,15 +24,15 @@
                <h3>Gestion des véhicules</h3>
                <div>
                    <ul class='sous-menu'>
-                    <li><a href='rdk_financial/views/ajout_vehicule.php'>Ajouter un véhicule</a></li>
-                    <li><a href='rdk_financial/views/vehicules.php'>Véhicules</a></li>
+                    <li><a href='?page=ajout_vehicule'>Ajouter un véhicule</a></li>
+                    <li><a href='?page=ajout_client'>Ajouter un nouveau client</a></li>
+                    <li><a href='?page=vehicules'>Véhicules</a></li>
                    </ul>
                </div>
            </div>
          </div> 
        </nav>
     </header>
-
     <h1 class='title-head'>Information du véhicule n°200</h1>
 
     <div class='page-vehicule-infos'>
@@ -58,13 +42,19 @@
             data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="../images/vehicule_3.jpg" class="d-block w-100" alt="vehicule_1">
+                <img src="./images/<?=$vehicle['image_1']?>" class="d-block w-100" alt="vehicule_1">
               </div>
               <div class="carousel-item">
-                <img src="../images/vehicule_1.jpg" class="d-block w-100" alt="vehicule_2">
+                <img src="./images/<?=$vehicle['image_2']?>" class="d-block w-100" alt="vehicule_2">
               </div>
               <div class="carousel-item">
-                <img src="../images/vehicule_6.jpg" class="d-block w-100" alt="vehicule_3">
+                <img src="./images/<?=$vehicle['image_3']?>" class="d-block w-100" alt="vehicule_3">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/<?=$vehicle['image_4']?>" class="d-block w-100" alt="vehicule_3">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/<?=$vehicle['image_5']?>" class="d-block w-100" alt="vehicule_3">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
@@ -82,54 +72,50 @@
         <div class='infos row '>
           <div class="mb-3 col-6 col-md-6 col-lg-4">
             <label for="exampleFormControlInput1" class="form-label">Marque : </label>
-            <input type="text" class="form-control" value='BMW'>
+            <input type="text" class="form-control" value='<?=$vehicle['marque']?>'>
           </div>
           <div class="mb-3 col-6 col-md-6 col-lg-4">
             <label for="exampleFormControlInput1" class="form-label">Type : </label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control"value='<?=$vehicle['type']?>' >
           </div>
           <div class="mb-3 col-6 col-md-6 col-lg-4">
             <label for="exampleFormControlInput1" class="form-label">Kilométrage</label>
-            <input type="text" class="form-control" value='25 000'>
+            <input type="text" class="form-control" value='<?=$vehicle['kilometrage']?>'>
           </div>
           <div class="mb-3 col-6 col-md-6 col-lg-4">
-            <label for="exampleFormControlInput1" class="form-label">immarticulation</label>
-            <input type="text" class="form-control" value='AB-152-KL'>
+            <label for="exampleFormControlInput1" class="form-label">immatriculation</label>
+            <input type="text" class="form-control" value='<?=$vehicle['immatriculation']?>'>
           </div>
           <div class="mb-3 col-6 col-md-6 col-lg-4">
             <label for="exampleFormControlInput1" class="form-label">Carburant</label>
             <select class="form-select w-auto col-md-5 form-select-sm" aria-label=".form-select-sm example">
               <option></option>
-              <option value="manuelle">Diesel</option>
-              <option value="automatique" selected>Essence</option>
-              <option value="automatique">Electrique</option>
-              <option value="automatique">Hybride (essence)</option>
-              <option value="automatique">Hybride (essence)</option>
+              <option value='diesel' <?=$vehicle['carburant'] ==='diesel'? 'selected':''?>>Diesel</option>
+              <option value="sans-plomb 98"<?=$vehicle['carburant'] ==='sans-plomb 98'? 'selected':''?>>sans-plomb 98</option>
+              <option value="sans-plomb 95"<?=$vehicle['carburant'] ==='sans-plomb 95'? 'selected':''?> >sans-plomb 95</option>
+              <option value="hybride"<?=$vehicle['carburant'] ==='hybride'? 'selected':''?> >Hybride</option>
+              <option value="electrique"<?=$vehicle['carburant'] ==='electrique'? 'selected':''?> >electrique</option>
             </select>
           </div>
           <div class="mb-3 col-6 col-md-6 col-lg-4">
             <label for="exampleFormControlInput1" class="form-label">Boite de vitesse</label>
             <select class="form-select w-auto col-md-5 form-select-sm" aria-label=".form-select-sm example">
               <option></option>
-              <option value="manuelle">Manuelle</option>
-              <option value="automatique" selected>Automatique</option>
+              <option value="manuelle"<?=$vehicle['boite_de_vitesse'] ==='manuelle'? 'selected':''?> >Manuelle</option>
+              <option value="automatique" <?=$vehicle['boite_de_vitesse'] ==='automatique'? 'selected':''?>>Automatique</option>
             </select>
           </div>
           <div class="mb-3 col-6 col-md-6 col-lg-4">
             <label for="exampleFormControlInput1" class="form-label">Prix d'achat</label>
-            <input type="text" class="form-control" value=' 15 000'>
+            <input type="text" class="form-control" value='<?=$vehicle['prix_d_achat']?>'>
           </div>
           <div class="mb-3 col-6 col-md-6 col-lg-4">
             <label for="exampleFormControlInput1" class="form-label">Date d'achat</label>
-            <input type="text" class="form-control" value='12/10/2021'>
+            <input type="text" class="form-control" value='<?=$vehicle['date_d_achat']?>'>
           </div>
           <div class="mb-3 col-6 col-md-6 col-lg-4">
             <label for="exampleFormControlInput1" class="form-label">Prix de vente</label>
-            <input type="text" class="form-control" value='30 000'>
-          </div>
-          <div class="mb-3 col-6 col-md-6 col-lg-4">
-            <label for="exampleFormControlInput1" class="form-label">Date de vente</label>
-            <input type="text" class="form-control" value='23/02/222'>
+            <input type="text" class="form-control"  value ='<?=$vehicle['prix_d_achat']?>'>
           </div>
           <div class="mb-3 col-6 col-md-6 col-lg-4">
             <label for="exampleFormControlInput1" class="form-label">Prix LLD</label>
@@ -165,6 +151,3 @@
       </div>
     </div>
   </div>
-</body>
-
-</html>

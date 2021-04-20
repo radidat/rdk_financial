@@ -1,37 +1,25 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link  href='../bootstrap-5/css/bootstrap.css' rel='stylesheet'>
-    <link href='../Css/generale.css' rel='stylesheet'>
-    <link href='../Css/./inscription_et_connextion.css' rel='stylesheet'>
-    <script src="https://kit.fontawesome.com/1748750407.js" crossorigin="anonymous"></script>
-    <script src='./js/sideBar.js' defer></script>
-    <script src='../bootstrap-5/js/bootstrap.js' defer></script>
-    <title>connexion</title>
-</head>
-<body>
-   
+<?php
+
+ob_start();
+?>
   <div id='bg-connexion'>
     <div class = 'container-data'>
 
-        <form  class='row connexion'>
+        <form  class='row connexion' method='POST'>
           <img src='../images/rdk_financial.png' class='logo_rdk_connexion'>
         <div class='col-md-12 row'>
-                
+                   <?=(isset($_POST['submit_connexion']) ? $erreur: '')?>
               <div class="mb-3 col-12">
-                <label for="exampleFormControlInput1" class="form-label">Identifiant</label>
-                <input type="text" class="form-control " >
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="text" class="form-control" name='mailconnect' >
               </div>
 
               <div class="mb-3 col-12">
                 <label for="exampleFormControlInput1" class="form-label">Mot de passe</label>
-                <input type="text" class="form-control "  >
+                <input type="password" class="form-control " name='mdpconnect'  >
               </div>
             <div class='col-12'>
-              <button type='submit' class='btn btn-primary w-100 '>Se connecter</button>
+              <button type='submit' class='btn btn-primary w-100 ' name='submit_connexion'>Se connecter</button>
             </div>
             <div class='d-flex justify-content-around flex-nowrap'>
               <p class='col-6' style='white-space: nowrap'>Mot de passe oublié</p>
@@ -42,5 +30,3 @@
         </form>
     </div>
     </div>
-</body>
-</html>

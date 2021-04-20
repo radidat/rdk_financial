@@ -14,7 +14,78 @@
     width: 75%;
     margin-left: 15%;
 }
+.search-client{
+ margin: 15px 15px ;
+}
 
+.btn-add-client, .btn-search-client{ 
+    background-color: #fff;
+    text-decoration: none;
+    color: #53B4FF;
+    text-align: center;
+
+
+    
+}
+.btn-add-client{ 
+    padding-top: 5px;
+    border-radius: 5px;
+    width: 200px;
+    font-size:16px;
+    height: 40px;
+    margin: 15px auto;
+    transition: 0.5s;
+    white-space: nowrap;
+
+}
+
+.btn-add-client:hover, .btn-search-client:hover{
+    background-color: rgb(206, 206, 206);
+    color: #fff;
+    
+}
+
+.select-client{ 
+    margin: 0 auto;
+}
+.select-client select{
+    width: 300px;
+    margin: 15px auto;
+    box-shadow: none;
+}
+.btn-add-client{ 
+    width:400px;
+}
+.btn-search-client{ 
+transition: 0.5s;
+ text-align: center;
+background-color: rgb(255, 255, 255);
+outline: none;
+margin: 0 auto;
+border-radius: 5px;
+width:200px;
+border: none;
+height: 50px;
+}
+
+.btn-pdf{ 
+
+    background-color: #A9CC34;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    margin: 5px auto;
+    padding-top: 10px;
+    border-radius: 5px;
+    text-decoration: none; 
+    color: #fff; 
+    transition: all 0.2s linear;
+}
+
+.btn-pdf:hover{
+    color: #fff;
+    background-color: #839e29;
+}
 @media only screen and (min-width: 576px){ 
 
 
@@ -37,7 +108,15 @@
         margin-left: -60%;
         width: 400px;
     }
+    .search-client select{ 
+        margin-top: 0px;
+        width: 400px;
+        height:50px;
+    }
+    .btn-search-client{
+        width: 300px;
   }
+}
   @media only screen and (min-width: 992px){ 
     .container-data form.location{
         width: 950px; 
@@ -64,6 +143,19 @@
         width: 300px;
        margin-left: 750px;
         margin-top: -95px;
+    }
+    .search-client{ 
+        margin-left: 250px;
+    }
+    .btn-add-client{ 
+        margin-left: 50px;
+        width:250px;
+    }
+    .select-client{ 
+        margin-left: 50px;
+    }
+    .btn-search-client{ 
+        margin-left: -250px;
     }
   }
 

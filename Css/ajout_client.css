@@ -1,0 +1,79 @@
+#bg-ajout-client{
+    background-color: #A9CC34;
+}
+
+.ajout-client{ 
+
+    background-color: #fff;
+    border-radius: 5px;
+    width: 380px;
+}
+
+.btn-ajout-client{
+    background-color:#A9CC34 ;
+    color: #fff;
+    margin-left: 5px;
+    width: 100%;
+}
+@media only screen and (min-width: 576px){
+   .ajout-client{
+       width:500px;
+   }
+}
+@media only screen and (min-width: 768px){
+    .ajout-client{
+        width:700px;
+        height: 550px;
+    }
+    .btn-client{
+       width: 200px;
+    text-align: center;
+    margin-left: 40%;
+    }
+ }
+ @media only screen and (min-width: 992px){
+    .ajout-client{
+        margin-top: 25px;
+        width:900px;
+        height: 400px;
+    }
+    .btn-ajout_client{
+       width: 200px;
+    text-align: center;
+    margin-left: 40%;
+    }
+    #bg-ajout-client{
+        height: 680px;
+    }
+ }
+
+ @media only screen and (min-width: 1200px){
+    .ajout-client{
+        margin-left: 250px;
+        margin-top: 250px;
+        width:850px;
+        height: 400px;
+    }
+    .btn-client{
+       width: 200px;
+    text-align: center;
+    margin-left: 40%;
+    }
+ }
+ @media only screen and (min-width: 1400px){
+    #bg-ajout-client{
+        height: 720px;
+    }
+    .ajout-client{
+        margin-left: 250px;
+        margin-top:25px;
+        width:1200px;
+     height:500px;
+    }
+    .btn-ajout-client{
+        margin-top: 25px;
+       width:300px;
+    text-align: center;
+    margin-left: 35%;
+    }
+ }

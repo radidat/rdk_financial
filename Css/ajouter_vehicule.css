@@ -1,5 +1,5 @@
 #bg-ajout-vehicule{
-    background-color: #A9CC34;
+    background-color: #53B4FF;
 }
 
 .ajout-vehicule{ 
@@ -10,7 +10,7 @@
 }
 
 .btn-ajout{
-    background-color:#A9CC34 ;
+    background-color:#53B4FF ;
     color: #fff;
     margin-left: 5px;
     width: 100%;
@@ -68,7 +68,7 @@
         margin-left: 250px;
         margin-top:25px;
         width:1200px;
-     height:400px;
+     height:500px;
     }
     .btn-ajout{
         margin-top: 25px;
