@@ -49,4 +49,8 @@ public function new_client($post){
 
 }
 
+public function contravention(){ 
+
+     require './views/contravention.php';
+}
 }

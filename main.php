@@ -27,7 +27,7 @@ if($page){
 
     }elseif($page==='infos_vehicule'){ 
 
-         $vehicles->infos_vehicles($_GET);
+         $vehicles->infos_vehicles($_GET, $_POST);
          $linkCSS ='info_vehicule';
     }
 
@@ -37,8 +37,11 @@ if($page ==='location'){
          $linkCSS ='location_vehicule';
 
 }elseif($page==='etats_vehicules'){ 
-
-         $location->stats_vehicles();
+       /*  $data_etat_vehicules=[];
+        if(isset($_POST['sumbit_test'])){
+                $data_etat_vehicules[] = $_POST['nom'];
+        }*/
+         $location->stats_vehicles($_GET, $_POST, $_FILES);
          $linkCSS ='etat_vehicule';
 }elseif($page==="etat_vehicule_client"){
 
@@ -58,7 +61,12 @@ if($page==='clients'){
     $linkCSS ='ajout_client';
     $clients->new_client($_POST);
 
+}elseif($page ==='contravention'){
+    $linkCSS ='contravention';
+       $clients->contravention();
+
 }
+
 if($page ==='inscription'){
     $authentication->inscription($_POST);
     $linkCSS ='inscription_connexion';

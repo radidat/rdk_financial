@@ -1,5 +1,6 @@
 <?php
 require './model/vehiculesModel.php';
+require './utils/Upload.php';
 class Vehicles { 
 
 
@@ -37,67 +38,19 @@ class Vehicles {
          /* header('Location: main.php?page=ajout_vehicule&marque='.$post['marque']);*/
          }
              
-    
-         $test = "hello world";
-
-
-
-         
+  
+          /* upload images */
+            
        if(isset($files['photos']) && $files['photos']!==''){ 
 
-
-
-        $extentions = ['jpeg', 'jpg','png', 'gif']; 
-
-     
-        $name_files = [];
-
-      $count_files = count($files['photos']['name']); 
-
-      /*check if unique name has extentions jpeg, jpg, png, gif */
-      for($i = 0 ; $i< $count_files; $i++){
-        $uniq_name = uniqid('', true);
-           $separator = explode('.',$files['photos']['name'][$i]);
-           foreach($separator as $value ){ 
-
-            if( in_array($value, $extentions)){
-                   $new_name= $uniq_name.'.'.$value;
-                 $name_files[] = $new_name;
-            }
+           $name_files = Upload::images($files['photos']);
+           if(isset($name_files) && count($name_files)> 0){
+            $this->vehiclesModel->setNewVehicle($data_vehicles, $name_files);
            }
-      }
-
-      /*à revoir la vérification du dossier*/
-  
-      /**check if  unique_name  exist in directory images, if unique_name exist it will be changed*/
-    /*  $dir =  scandir('./images');
-      foreach($name_files as $key=>$test){
-        $new_uniq_name = uniqid('', true);
-              if(in_array($test, $dir)){
-                  $tester[$key] = $new_uniq_name.'.png';
-              }
-       }*/
-    
-       /* add images on directory */
-       $tmp_name = $files['photos']['tmp_name'];
-       if(count($tmp_name) > 0){
-
-        for($j = 0; $j< count($tmp_name); $j++){
-
-          move_uploaded_file($tmp_name[$j], './images/'.$name_files[$j]);
-    
-            }
-
-       }
-   
-
-
 
        }
 
-       if(isset($name_files) && count($name_files)> 0){
-        $this->vehiclesModel->setNewVehicle($data_vehicles, $name_files);
-       }
+       
       
 
         require './Views/ajout_vehicule.php';

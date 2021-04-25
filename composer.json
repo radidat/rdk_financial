@@ -1,0 +1,12 @@
+{
+    "name": "radid/rdk_financial",
+    "authors": [
+        {
+            "name": "Oumrane",
+            "email": "radidatoumrane97605@hotmail.fr"
+        }
+    ],
+    "require": {
+        "jurosh/pdf-merge": "^2.1"
+    }
+}

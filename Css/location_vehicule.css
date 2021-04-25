@@ -1,9 +1,10 @@
 #bg-location{ 
     background-color: #53B4FF;
+    height: 100%;
 }
 
 .container-data form.location{
-    height: 1500px;
+    height: 1600px;
     width: 380px;
     background-color: #fff;
     border-radius: 10px;
@@ -68,24 +69,8 @@ border: none;
 height: 50px;
 }
 
-.btn-pdf{ 
 
-    background-color: #A9CC34;
-    width: 200px;
-    height: 40px;
-    text-align: center;
-    margin: 5px auto;
-    padding-top: 10px;
-    border-radius: 5px;
-    text-decoration: none; 
-    color: #fff; 
-    transition: all 0.2s linear;
-}
 
-.btn-pdf:hover{
-    color: #fff;
-    background-color: #839e29;
-}
 @media only screen and (min-width: 576px){ 
 
 
@@ -104,10 +89,19 @@ height: 50px;
         height: 1100px;
         width: 750px;
     }
-    .btn-location{
-        margin-left: -60%;
-        width: 400px;
+    .montant{ 
+        margin-left: 50px;
+        width: 75%;
     }
+    .file{ 
+        margin-left: 50px;
+     width: 75%;
+    }
+    .wrapper-btn-location{
+        margin-left: 85px;
+         margin-top: 125px;
+    }
+
     .search-client select{ 
         margin-top: 0px;
         width: 400px;
@@ -120,16 +114,38 @@ height: 50px;
   @media only screen and (min-width: 992px){ 
     .container-data form.location{
         width: 950px; 
-        height: 750px;
+        height: 800px;
      }
         
     .btn-location{ 
         width: 300px;
-       margin-left: 560px;
-        margin-top: -85px;
+        margin-top: -25px;
+       margin-left: 50px;
     }
 
 }
+/*signature*/
+.wrapper {
+    position: relative;
+    width: 300px;
+    border: 1px solid black;
+    height: 150px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .signature-pad {
+    border: 1px solid black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:300px;
+    height:150px;
+    background-color: white;
+  }
+
 
 @media only screen and (min-width: 1200px){ 
 
@@ -137,12 +153,10 @@ height: 50px;
         margin-top: 20px;
         margin-left: 250px;
         width: 1100px;
-        height: 750px;
+        height:800px;
      }
      .btn-location{ 
-        width: 300px;
-       margin-left: 750px;
-        margin-top: -95px;
+
     }
     .search-client{ 
         margin-left: 250px;

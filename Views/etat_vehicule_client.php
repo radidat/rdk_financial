@@ -105,9 +105,15 @@
                         <input type="text" class="form-control   " value ='25 000'>
                       </div>
                       <div class="mb-3 col-12 col-md-12 col-lg-12">
-                        <label for="exampleFormControlInput1" class="form-label">Niveau</label>
-                        <input type="text" class="form-control  " value='moyen'>
-                      </div>
+              <label for="exampleFormControlInput1" class="form-label">Niveau du carburant</label>
+              <select class="form-select w-auto col-md-5 form-select-sm" name="niveau" aria-label=".form-select-sm example">
+                <option value="1/5">1/5</option>
+                <option value="2/5">2/5</option>
+                <option value="3/5">3/5</option>
+                <option value="4/5">4/5</option>
+                <option value="5/5">5/5</option>
+              </select>
+            </div>
                       <div class="mb-3 col-12 col-md-12 col-lg-12">
                         <label for="exampleFormControlInput1" class="form-label">images du véhicule</label>
                         <input type="file" class="form-control  " multiple >
@@ -130,10 +136,16 @@
                         <label for="exampleFormControlInput1" class="form-label">Kilométrage</label>
                         <input type="email" class="form-control  " >
                       </div>
-                      <div class="mb-3 col-12 col-6 col-md-12 col-lg-12">
-                        <label for="exampleFormControlInput1" class="form-label">Niveau</label>
-                        <input type="email" class="form-control  " >
-                      </div>
+                      <div class="mb-3 col-12 col-md-12 col-lg-12">
+              <label for="exampleFormControlInput1" class="form-label">Niveau du carburant</label>
+              <select class="form-select w-auto col-md-5 form-select-sm" name="niveau" aria-label=".form-select-sm example">
+                <option value="1/5">1/5</option>
+                <option value="2/5">2/5</option>
+                <option value="3/5">3/5</option>
+                <option value="4/5">4/5</option>
+                <option value="5/5">5/5</option>
+              </select>
+            </div>
                       <div class="mb-3 col-12col-6 col-md-12 col-lg-12">
                         <label for="exampleFormControlInput1" class="form-label">images du véhicule</label>
                         <input type="file" class="form-control  " multiple >
@@ -163,7 +175,7 @@
             <div class=' buttons-group-etat-vehicule  col-md-12 col-lg-6'>
                 <button type='button' class='btn'>Modifier</button>
                 <button type='submit' class='btn'>Enregistrer</button>
-                <a href='main.php?page=contravention.php' type='button' style='text-decoration: none; color:#fff;' class='btn'>Appliquer un pv</a>
+                <a href='main.php?page=contravention' type='button' style='text-decoration: none; color:#fff;' class='btn'>Appliquer un pv</a>
                   </div>
                 </div>
               </form>
