@@ -23,7 +23,7 @@ class Vehicles {
     {   
     
            $data_vehicles =[];
-
+            $errors =[];
          if(isset($post['submit'])){
             $data_vehicles['marque'] =  htmlspecialchars($post['marque']); 
             $data_vehicles['type'] =  htmlspecialchars($post['type']); 
@@ -41,13 +41,15 @@ class Vehicles {
   
           /* upload images */
             
-       if(isset($files['photos']) && $files['photos']!==''){ 
+       if(isset($files['photos']) && $files['photos']['name'] <= 12){ 
 
            $name_files = Upload::images($files['photos']);
            if(isset($name_files) && count($name_files)> 0){
             $this->vehiclesModel->setNewVehicle($data_vehicles, $name_files);
            }
 
+       }else{ 
+           $errors[] = 'vous devez rentrer au moins 1 à 12 photos(s)';
        }
 
        

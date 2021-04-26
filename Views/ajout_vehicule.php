@@ -4,11 +4,11 @@
     <header >
       
       <button class='btn-open'>
-        <img src='../images/icons8-menu.svg'>
+        <img src='./views/images/icons8-menu.svg'>
      </button>
        <nav class= 'navbarHead' id='sidebarjs'>
          <button type="button" class='close'><i class="fas fa-times"></i></button>
-         <img src='./images/rdk_financial.png' alt="logo" class='logo-rdk'>
+         <img src='./views/images/rdk_financial.png' alt="logo" class='logo-rdk'>
          <div class='menu'>
              <div class='menu-item'>
                  <h3>Réservation</h3>
@@ -94,6 +94,12 @@
                 <div class="mb-3 col-md-6 col-lg-4">
                   <label for="exampleFormControlInput1" class="form-label">Ajouter des photos</label>
                   <input type="file" class="form-control" name='photos[]' multiple  required>
+                  <?php if(isset($_FILES['photos']['name']) && count($_FILES['photos']['name']) > 12):?>
+              <div style='color: red'>
+                  <?= $errors[0]?>
+                  </div>
+              <?php endif ?>
+          </div>
                 </div>
 
                 <div class="mb-3">

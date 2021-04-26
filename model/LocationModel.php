@@ -1,6 +1,6 @@
 <?php
-
-class LocationModel  { 
+require_once './model/DataBase.php';
+class LocationModel extends DataBase  { 
 
 
             public  $last_id ='';
@@ -11,15 +11,7 @@ class LocationModel  {
 
      }
 
-     private function dbConnect(){ 
 
-          $db = new PDO('mysql:host=localhost;dbname=rdk_financial;charset=utf8','root', '',[
-              PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-          ]);
-  
-          return $db;
-          }  
-     
      public function fetch_clients(){ 
 
           $db = $this->dbConnect();
@@ -144,7 +136,6 @@ class LocationModel  {
 
 public function set_etat_vehicule($data, $images){ 
      $db = $this->dbConnect();
-     var_dump($data);
      if(!empty($data)){ 
           $req  = "INSERT INTO etat_du_vehicule (id_location, kilometrage_depart, niveau_carburant_depart, observation_depart ) 
            VALUES (?, ?, ?, ?)";
@@ -161,7 +152,7 @@ public function images_etat_vehicule( array $images){
      $images[] = $this->last_id_etat;
      $db = $this->dbConnect();
      if(count($images) === 2){ 
-          $requestImages= "INSERT INTO image_etat_vehicule_depart (image_1, id_etat_vehicule) 
+          $requestImages= "INSERT INTO image_etat_vehicule_depart (image_1, id_etat_du_vehicule) 
           VALUES (?, ?)";
       }
       if(count($images) === 3){ 
@@ -208,6 +199,7 @@ public function images_etat_vehicule( array $images){
           $requestImages  = "INSERT INTO image_etat_vehicule_depart (image_1,image_2, image_3, image_4, image_5, image_6,image_7, image_8, image_9, image_10, image_11, image_12, id_etat_du_vehicule) 
           VALUES (?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?)";
       }
+    
 
       $insertImages =$db->prepare($requestImages); 
       $insertImages->execute($images);

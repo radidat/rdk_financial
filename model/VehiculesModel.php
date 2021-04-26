@@ -1,5 +1,5 @@
 <?php
-require './model/DataBase.php';
+require_once './model/DataBase.php';
 
 class VehiclesModel extends DataBase{ 
 

@@ -1,7 +1,7 @@
 
 <div id='inscription'>
 
-    <img src='./images/rdk_financial.png' style='width:100px; height: 100px; margin-left: 25px; margin-top: 25px'>
+    <img src='./views/images/rdk_financial.png' style='width:100px; height: 100px; margin-left: 25px; margin-top: 25px'>
     <div class = 'container-data'>
 
         <form  class='row inscription' method="POST">

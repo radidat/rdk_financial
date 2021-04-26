@@ -23,7 +23,7 @@ if($page){
     }elseif($page==='ajout_vehicule'){ 
 
             $vehicles->add_vehicles($_POST,$_FILES);
-            $linkCSS ='ajouter_vehicule';
+            $linkCSS ='ajouterVehicule';
 
     }elseif($page==='infos_vehicule'){ 
 
@@ -74,10 +74,12 @@ if($page ==='inscription'){
     $authentication->connexion($_POST);
     $linkCSS ='inscription_connexion';
 }
+ if($page==='telecharger_fichier'){ 
 
-
+    $location->downloading();
 }
 
+}
 
 
 $content = ob_get_clean();

@@ -1,0 +1,75 @@
+#bg-ajout-vehicule{
+    background-color: #53B4FF;
+}
+
+.ajout-vehicule{ 
+
+    background-color: #fff;
+    border-radius: 5px;
+    width: 380px;
+}
+
+.btn-ajout{
+    background-color:#ffffff ;
+    color: #53B4FF;
+    margin-left: 150px;
+    margin-top: 20px;
+    width: 50%;
+}
+@media only screen and (min-width: 576px){
+   .ajout-vehicule{
+       width:500px;
+   }
+}
+@media only screen and (min-width: 768px){
+    .ajout-vehicule{
+        width:700px;
+        height: 550px;
+    }
+    .btn-ajout{
+       width: 200px;
+    text-align: center;
+    margin-left: 40%;
+    }
+ }
+ @media only screen and (min-width: 992px){
+    .ajout-vehicule{
+        margin-top: 25px;
+        width:900px;
+        height: 400px;
+    }
+    .btn-ajout{
+       width: 200px;
+    margin-left: 40%;
+    }
+    #bg-ajout-vehicule{
+        height: 680px;
+    }
+ }
+
+ @media only screen and (min-width: 1200px){
+    .ajout-vehicule{
+        margin-left: 250px;
+        margin-top: 250px;
+        width:850px;
+        height: 400px !important;
+    }
+    .btn-ajout{
+       width: 200px;
+    }
+ }
+ @media only screen and (min-width: 1400px){
+    #bg-ajout-vehicule{
+        height: 760px;
+    }
+    .ajout-vehicule{
+        margin-left: 250px;
+        margin-top:25px;
+        width:1200px;
+     height:500px;
+    }
+    .btn-ajout{
+        
+       width:300px;
+    }
+ }

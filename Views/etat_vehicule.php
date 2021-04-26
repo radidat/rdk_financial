@@ -3,11 +3,11 @@
   <header>
 
     <button class='btn-open'>
-      <img src='./images/icons8-menu.svg'>
+      <img src='./views/images/icons8-menu.svg'>
     </button>
     <nav class='navbarHead' id='sidebarjs'>
       <button type="button" class='close'><i class="fas fa-times"></i></button>
-      <img src='./images/rdk_financial.png' alt="logo" class='logo-rdk'>
+      <img src='./views/images/rdk_financial.png' alt="logo" class='logo-rdk'>
       <div class='menu'>
         <div class='menu-item'>
           <h3>Réservation</h3>
@@ -37,7 +37,6 @@
   <div class='prev-page'>
     <a href='?page=location'><span class=' chevron chevron-left'><i class="fas fa-chevron-left"></i></span> Précédent</a>
   </div>
-  <?= isset($_POST['submit_etat_vehicule']) ? "<a href='./filesPdf/contrat/" . $dirPdfoutput[0] . "' target='_blank' class='btn-pdf'> telecharger le fichier</a>" : '' ?>
   <div class='container-data'>
 
 
@@ -123,6 +122,11 @@
           <div class="mb-3 col-12 col-md-12 col-lg-12">
             <label for="exampleFormControlInput1" class="form-label">images du véhicule</label>
             <input type="file" class="form-control" name='photo_vehicule_depart[]' multiple required>
+            <?php if(isset($_FILES['photo_vehicule_depart']['name']) && count($_FILES['photo_vehicule_depart']['name']) > 12):?>
+              <div style='color: red'>
+                  <?= $errors[0]?>
+                  </div>
+              <?php endif ?>
           </div>
           <div class=" col-12 col-md-12 col-lg-12">
             <label for="exampleFormControlTextarea1" class="form-label">Observations</label>
@@ -168,11 +172,12 @@
           <div class="mb-3 row  col-12 col-md-6 col-lg-6">
            
             <div >
-              <input type='hidden' name='signature-rdk-etat' id='signature-client-etat' value=''>
+            Signature RDK
+              <input type='hidden' name='signature-rdk-etat' id='signature-rdk-etat' value=''>
               <div class="wrapper">
                 <canvas id="signature-pad-rdk" class="signature-pad" width=250 height=150></canvas>
               </div>
-              <button class='clear-signature-rdk-etat btn btn-danger mt-2'>recommercer</button>
+              <button type='button' class='clear-signature-rdk-etat btn btn-danger mt-2'>recommercer</button>
             </div>
           </div>
 
@@ -182,7 +187,7 @@
               <div class="wrapper">
                 <canvas id="signature-pad-client" class="signature-pad" width=250 height=150></canvas>
               </div>
-              <button class='clear-signature-client-etat btn btn-danger mt-2'>recommercer</button>
+              <button type ='button'class='clear-signature-client-etat btn btn-danger mt-2'>recommercer</button>
             </div>
             <button type='button' id='save-signature-client-etat' class='btn btn-info col-md-12 mt-4 save-signature'> enregister la signature</button>   
           </div>
@@ -197,6 +202,9 @@
       </div>
 
     </form>
+    <div class="next-page">
+    <a href="?page=telecharger_fichier">Suivant<span class=' chevron chevron-right'><i class="fas fa-chevron-right"></i></span> </a>
+  </div>
   </div>
 
 </div>

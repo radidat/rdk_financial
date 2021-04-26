@@ -5,7 +5,7 @@
   <header>
 
     <button class='btn-open'>
-      <img src='./images/icons8-menu.svg'>
+      <img src='./views/images/icons8-menu.svg'>
     </button>
     <nav class='navbarHead' id='sidebarjs'>
       <button type="button" class='close'><i class="fas fa-times"></i></button>
@@ -36,7 +36,6 @@
   </header>
   <h1 class='title-head'>Contrat de location</h1>
 
-  <?= isset($_POST['save_location']) ? "<a href='./filesPdf/contrat_de_location/" . $dirPdfLocation[0] . "' target='_blank' class='btn-pdf'> telecharger le fichier</a>" : '' ?>
   <div class='search-client row'>
     <a type='button' class='btn-add-client col-12' href="?page=ajout_client"> nouveau client</a>
     <form method='POST' class='col-12 row select-client'>
@@ -248,7 +247,7 @@
     </form>
   </div>
   <div class="next-page">
-    <a href="?page=etats_vehicules&id_location=<?= $last_id_location['id'] ?>">Suivant<span class=' chevron chevron-right'><i class="fas fa-chevron-right"></i></span> </button>
+    <a href="?page=etats_vehicules&id_location=<?= $last_id_location['id'] ?>">Suivant<span class=' chevron chevron-right'><i class="fas fa-chevron-right"></i></span> </a>
   </div>
 
 </div>

@@ -60,9 +60,9 @@ class LocationControllers
     /*signature*/
     if(isset($post['signature_rdk']) &&!empty($post['signature_rdk'])){ 
               
-      Signature::image_signature($post['signature_rdk'], './filesPdf/signature/');  
+      Signature::image_signature($post['signature_rdk'], './filesPdf/signature/rdk');  
   }
-                  $dirSignature = scandir('./filesPdf/signature/', SCANDIR_SORT_DESCENDING); 
+                  $dirSignature = scandir('./filesPdf/signature/client/', SCANDIR_SORT_DESCENDING); 
                      $lastSignature = $dirSignature[0];
     /* generate new pdf location */
     $data_generate_pdf_location =  $this->locationModel->getDataLocation();
@@ -81,23 +81,23 @@ class LocationControllers
   }
 
 
-  private function new_pdf_location($data, $last_signature)
-  {
-    $unique_name_pdf = uniqid('', true);
-    $this->pdf->AddPage();
-    $this->header($data, $last_signature);
-    $this->pdf->Output('F', './filesPdf/contrat_de_location/' . $unique_name_pdf . '.pdf');
-  }
-
-
 
   public function stats_vehicles($get = null, $post, $files = null)
   {
 
-
+/*signature*/
+if(isset($post['signature-client-etat']) &&!empty($post['signature-client-etat'])){ 
+              
+  Signature::image_signature($post['signature-client-etat'], './filesPdf/signature/clientEtat/');  
+}
+if(isset($post['signature-rdk-etat']) &&!empty($post['signature-rdk-etat'])){ 
+          
+Signature::image_signature($post['signature-rdk-etat'], './filesPdf/signature/rdk/');  
+}
 
 
     $data_etat_vehicule = [];
+    $errors = [];
     if (isset($get['id_location']) && $get['id_location'] !== '') {
       $data_etat_vehicule[] = $get['id_location'];
     }
@@ -110,50 +110,32 @@ class LocationControllers
       $data_etat_vehicule[] = $post['niveau_depart'];
       $data_etat_vehicule[] = $post['observation_depart'];
     }
-    // var_dump($data_etat_vehicule);
-    if (isset($files['photo_vehicule_depart']) && $files['photo_vehicule_depart'] !== '' && $get['id_location'] !== '') {
+
+    if (isset($files['photo_vehicule_depart']) && count($files['photo_vehicule_depart']['name']) <= 12 && isset($get['id_location']) ) {
 
       $name_files_photos_etat = Upload::images($files['photo_vehicule_depart']);
       if (isset($name_files_photos_etat) && count($name_files_photos_etat) > 0) {
         $this->locationModel->set_etat_vehicule($data_etat_vehicule, $name_files_photos_etat);
       }
+    }else{ 
+    $errors[]= 'vous devez rentrer au moins 1 à 12 photos(s)';
     }
-
 
     $data_generate_pdf_etat_de_vehicule = $this->locationModel->get_last_data_etat_vehicule();
     $data_generate_pdf_images_etat_de_vehicule = $this->locationModel->get_last_image_etat_vehicule();
-
+       $dir_signature_rdk  = scandir('./filesPdf/signature/rdk/',SCANDIR_SORT_DESCENDING );
+       $dir_signature_client = scandir('./filesPdf/signature/clientEtat/',SCANDIR_SORT_DESCENDING );
+            $signature_rdk  = $dir_signature_rdk[0];
+            $signature_client = $dir_signature_client[0];
 
     if (isset($data_generate_pdf_etat_de_vehicule) && !empty($data_generate_pdf_etat_de_vehicule) & isset($post['submit_etat_vehicule'])) {
-      $this->new_pdf_etat_vehicule($data_generate_pdf_etat_de_vehicule, $data_generate_pdf_images_etat_de_vehicule);
+      $this->new_pdf_etat_vehicule($data_generate_pdf_etat_de_vehicule, $data_generate_pdf_images_etat_de_vehicule,$signature_rdk, $signature_client  );
     }
 
     /*generate contrat*/
-    $dirPdfLocation = scandir('./filesPdf/contrat_de_location', SCANDIR_SORT_DESCENDING);
-    $dirPdfEtat = scandir('./filesPdf/etat_vehicule', SCANDIR_SORT_DESCENDING);
-    $dirPdfoutput = scandir('./filesPdf/contrat', SCANDIR_SORT_DESCENDING);
-    $uniq_file_name = uniqid('', true);
-    $this->pdf_merge->addPDF('./filesPdf/contrat_de_location/' . $dirPdfLocation[0], 'all');
-    $this->pdf_merge->addPDF('./filesPdf/etat_vehicule/' . $dirPdfEtat[0], 'all');
-    $this->pdf_merge->addPDF('./filesPdf/conditions/cgl.pdf', 'all');
-    $this->pdf_merge->merge('file', './filesPdf/contrat/' . $uniq_file_name . '.pdf');
-
 
 
     require './Views/etat_vehicule.php';
-  }
-
-
-  public  function new_pdf_etat_vehicule($data, $name_files)
-  {
-    $unique_name_pdf = uniqid('', true);
-    $this->pdf->AddPage();
-    $this->head_etat($data, $name_files);
-    $this->pdf->AddPage();
-    $this->pdf->Ln(100);
-    $this->watching($data['observation_depart']);
-    $this->condition();
-    $this->pdf->Output('F', './filesPdf/etat_vehicule/' . $unique_name_pdf . '.pdf');
   }
 
   public  function stats_vehicles_clients()
@@ -163,8 +145,43 @@ class LocationControllers
   }
 
 
+  public  function downloading()
+
+  {    $dirPdfLocation = scandir('./filesPdf/contrat_de_location', SCANDIR_SORT_DESCENDING);
+    $dirPdfEtat = scandir('./filesPdf/etat_vehicule', SCANDIR_SORT_DESCENDING);
+  
+    $uniq_file_name = uniqid('', true);
+      $this->pdf_merge->addPDF('./filesPdf/contrat_de_location/' . $dirPdfLocation[0], 'all');
+      $this->pdf_merge->addPDF('./filesPdf/etat_vehicule/' . $dirPdfEtat[0], 'all');
+    $this->pdf_merge->addPDF('./filesPdf/conditions/cgl.pdf', 'all');
+    $this->pdf_merge->merge('file', './filesPdf/contrat/' . $uniq_file_name . '.pdf');
+    
+   
+    $dirPdfOutput = scandir('./filesPdf/contrat', SCANDIR_SORT_DESCENDING);
+
+    require './Views/telecharger.php';
+  }
 
 
+  private function new_pdf_location($data, $last_signature)
+  {
+    $unique_name_pdf = uniqid('', true);
+    $this->pdf->AddPage();
+    $this->header($data, $last_signature);
+    $this->pdf->Output('F', './filesPdf/contrat_de_location/' . $unique_name_pdf . '.pdf');
+  }
+
+  public  function new_pdf_etat_vehicule($data, $name_files, $signature_rdk, $signature_client)
+  {
+    $unique_name_pdf = uniqid('', true);
+    $this->pdf->AddPage();
+    $this->head_etat($data, $name_files);
+    $this->pdf->AddPage();
+    $this->pdf->Ln(100);
+    $this->watching($data['observation_depart']);
+    $this->condition($signature_rdk, $signature_client);
+    $this->pdf->Output('F', './filesPdf/etat_vehicule/' . $unique_name_pdf . '.pdf');
+  }
 
 
 
@@ -204,7 +221,7 @@ class LocationControllers
   public function header($data_location, $last_signature)
   {
     // Police Arial gras 15
-    $this->pdf->Image('./images/rdk_financial.png', 10, 2, 30, 30);
+    $this->pdf->Image('./views/images/rdk_financial.png', 10, 2, 30, 30);
     $this->pdf->SetFont('Arial', 'B', 22);
     // Décalage
     $this->pdf->Cell(80);
@@ -331,7 +348,7 @@ class LocationControllers
     $this->pdf->Cell(50, 5, utf8_decode('Fait à Nantes le 10/10/2021'), 0, 1, 'L', true);
     $this->pdf->Cell(115, 5, utf8_decode('Total Facturé : ' . $data_location[0]['montant_de_la_location']), 0, 0, 'L', true);
     $this->pdf->Cell(50, 5, utf8_decode('Signature :'), 0, 1, 'L', true);
-    $this->pdf->Image('./filesPdf/signature/'.$last_signature, 135,250, 25, 20, 'PNG');
+    $this->pdf->Image('./filesPdf/signature/client/'.$last_signature, 135,250, 25, 20, 'PNG');
     $this->pdf->Cell(115, 5, utf8_decode(' paiement : ' . $data_location[0]['type_de_paiement']), 0, 1, 'L', true);
   }
   function footer()
@@ -363,7 +380,7 @@ class LocationControllers
   function head_etat($data_etat_vehicule, $name_files)
   {
     // Police Arial gras 15
-    $this->pdf->Image('./images/rdk_financial.png', 10, 2, 30, 30);
+    $this->pdf->Image('./views/images/rdk_financial.png', 10, 2, 30, 30);
     $this->pdf->SetFont('Arial', 'B', 22);
     // Décalage
     $this->pdf->Cell(80);
@@ -410,16 +427,16 @@ class LocationControllers
   {
     $this->pdf->Ln(5);
     $this->pdf->Rect(15, 110, 180, 180, 'D');
-    if ($name_files['image_1'] !== '') $this->pdf->Image('./images/' . $name_files['image_1'], 20, 115, 50, 50);
-    if ($name_files['image_2'] !== '') $this->pdf->Image('./images/' . $name_files['image_2'], 80, 115, 50, 50);
-    if ($name_files['image_3'] !== '') $this->pdf->Image('./images/' . $name_files['image_3'], 140, 115, 50, 50);
-    if ($name_files['image_4'] !== '') $this->pdf->Image('./images/' . $name_files['image_4'], 20, 115, 50, 50);
-    if ($name_files['image_5'] !== '') $this->pdf->Image('./images/' . $name_files['image_5'], 20, 170, 50, 50);
-      /*if($name_files[0] !=='') $this->pdf->Image('.images/'.$name_files[0],80,170,50,50);*/
-      /* if($name_files[0] !=='')$this->pdf->Image('.images/'.$name_files[0],140,170,50,50);
- if($name_files[0] !=='') $this->pdf->Image('.images/'.$name_files[0],20,230,50,50);
- if($name_files[0] !=='') $this->pdf->Image('.images/'.$name_files[0],80,230,50,50);
- if($name_files[0] !=='') $this->pdf->Image('.images/'.$name_files[0],140,230,50,50);*/;
+    if (!empty($name_files['image_1'])) $this->pdf->Image('./images/' . $name_files['image_1'], 20, 115, 50, 50);
+    if (!empty($name_files['image_2'])) $this->pdf->Image('./images/' . $name_files['image_2'], 80, 115, 50, 50);
+    if (!empty($name_files['image_3'])) $this->pdf->Image('./images/' . $name_files['image_3'], 140, 115, 50, 50);
+    if (!empty($name_files['image_4'])) $this->pdf->Image('./images/' . $name_files['image_4'], 20, 115, 50, 50);
+    if (!empty($name_files['image_5'])) $this->pdf->Image('./images/' .$name_files['image_5'], 20, 170, 50, 50);
+    if(!empty($name_files['image_6'])) $this->pdf->Image('./images/'.$name_files['image_6'],80,170,50,50);
+ if(!empty($name_files['image_7']))$this->pdf->Image('./images/'.$name_files['image_7'],140,170,50,50);
+ if(!empty($name_files['image_8'])) $this->pdf->Image('./images/'.$name_files['image_8'],20,230,50,50);
+ if(!empty($name_files['image_9'])) $this->pdf->Image('./images/'.$name_files['image_9'],80,230,50,50);
+ if(!empty($name_files['image_10'])) $this->pdf->Image('./images/'.$name_files['image_10'],140,230,50,50);
   }
   public function back()
   {
@@ -464,7 +481,7 @@ class LocationControllers
     $this->pdf->Ln(5);
   }
 
-  public function condition()
+  public function condition($signature_rdk, $signature_client)
   {
     $this->pdf->Ln(2);
     $this->pdf->SetFont('Arial', 'B', 10);
@@ -494,6 +511,9 @@ location	et	à	remettre	à	son	retour	un	constat	amiable	d’accident	dûment	co
     $this->pdf->Cell(115, 5, utf8_decode('Fait à Nantes le 10/10/2021'), 0, 0, 'L', true);
     $this->pdf->Cell(50, 5, utf8_decode('Fait à Nantes le 10/10/2021:'), 0, 1, 'L', true);
     $this->pdf->Cell(115, 5, utf8_decode('Signature'), 0, 0, 'L', true);
+    $this->pdf->Image('./filesPdf/signature/rdk/'.$signature_rdk, 20,230, 30, 20, 'PNG');
     $this->pdf->Cell(50, 5, utf8_decode('Signature :'), 0, 1, 'L', true);
+    $this->pdf->Image('./filesPdf/signature/clientEtat/'.$signature_client, 135,230, 30, 20, 'PNG');
+
   }
 }
